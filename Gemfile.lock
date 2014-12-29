@@ -1,0 +1,38 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    box (0.1.1)
+    crass (1.0.1)
+    curb (0.8.6)
+    feedjira (1.6.0)
+      curb (~> 0.8)
+      loofah (~> 2.0)
+      sax-machine (~> 1.0)
+    gli (2.12.2)
+    loofah (2.0.1)
+      nokogiri (>= 1.5.9)
+    mini_portile (0.6.1)
+    mustache (0.99.8)
+    nokogiri (1.6.5)
+      mini_portile (~> 0.6.0)
+    nokogumbo (1.2.0)
+      nokogiri
+    planet (0.5.4)
+      box
+      feedjira
+      gli
+      mustache
+      sanitize
+      stringex
+    sanitize (3.1.0)
+      crass (~> 1.0.1)
+      nokogiri (>= 1.4.4)
+      nokogumbo (= 1.2.0)
+    sax-machine (1.2.0)
+    stringex (2.5.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  planet
