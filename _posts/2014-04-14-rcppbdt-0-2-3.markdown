@@ -1,0 +1,68 @@
+---
+title: "RcppBDT 0.2.3"
+kind: article
+created_at: 2014-04-14 00:37:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+A new release of the <a href="http://dirk.eddelbuettel.com/code/rcpp.bdt.html">RcppBDT</a> package is now on CRAN. 
+
+<p></p>
+Several new modules were added; the package can now work on dates, date
+durations, "ptime" (aka posix time), and timezones.  Most interesting may be
+the fact that ptime is configured to use 96 bits. This allows a precise representation
+of dates and times down to nanoseconds, and permits date and time
+calculations at this level.
+
+<p></p>
+The complete NEWS entry is below:
+
+<p></p>
+<blockquote>
+<h4>Changes in version 0.2.3 (2014-04-13)</h4>
+<ul>
+  <li><p> New module 'bdtDt' replacing the old 'bdtDate' module in a more transparent style using a local class which is wrapped, just like the three other new classes do </p> </li>
+  <li><p> New module 'bdtTd' providing date durations which can be added to dates. </p> </li>
+  <li><p> New module 'bdtTz' providing time zone information such as offset to UTC, amount of DST, abbreviated and full timezone names. </p> </li>
+  <li><p> New module 'bdtDu' using 'posix_time::duration' for time durations types </p> </li>
+  <li><p> New module 'bdtPt' using 'posix_time::ptime' for posix time, down to nanosecond granularity (where hardware and OS permit it) </p> </li>
+  <li><p> Now selects C++11 compilation by setting <code>CXX_STD = CXX11</code> in <code>src/Makevars*</code> and hence depend on R 3.1.0 or
+  later &ndash; this gives gives us <code>long long</code> needed for the nano-second high-resolution time calculations across all builds and platforms. </p> </li>
+</ul>
+</blockquote>
+
+<p>
+Courtesy of
+<a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, there
+is also a diffstat report
+<a href="http://dirk.eddelbuettel.com/cranberries/2014/04/13#RcppBDT_0.2.3">for the lastest release</a>.
+As always, feedback is welcome and the 
+<a href="https://lists.r-forge.r-project.org/cgi-bin/mailman/listinfo/rcpp-devel">rcpp-devel mailing list</a>
+off the <a href="http://r-forge.r-project.org/projects/rcpp/">R-Forge page for Rcpp</a> is
+the best place to start a discussion.
+
+<p></p>
+<strong>Update:</strong> I just learned the hard way that the combination of
+32-bit OS, g++ at version 4.7 or newer and a Boost version of 1.53 or 1.54 does
+not work with this new upload.  Some Googling suggests that this ought to be
+fixed in Boost 1.54; seemingly it isn't as our trusted
+<a href="http://dirk.eddelbuettel.com/code/bh.html">BH</a> package with Boost
+headers provides that very version 1.54. However, the Googling also
+suggested a quick two-line fix which I just
+<a href="https://github.com/eddelbuettel/bh/commit/e0990ebdb3b813c09d0b27021c1d5c79aaff48f3" >committed in the Github repo</a>.
+A new <a href="http://dirk.eddelbuettel.com/code/bh.html">BH</a> package with
+the fix may follow in a few days.
+
+
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a>
+originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog.
+Please report excessive re-aggregation in third-party for-profit settings. 
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

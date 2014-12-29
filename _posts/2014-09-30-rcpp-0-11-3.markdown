@@ -1,0 +1,142 @@
+---
+title: "Rcpp 0.11.3"
+kind: article
+created_at: 2014-09-30 01:39:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p>A new release 0.11.3 of <a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a> is now on the <a href="http://cran.r-project.org">CRAN</a> network for <a href="http://www.r-project.org">GNU R</a>, and an updated <a href="http://www.debian.org">Debian</a> package has been uploaded too.</p>
+<p><a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a> has become <em>the</em> most popular way of enhancing <a href="http://www.r-project.org">GNU R</a> with C++ code. As of today, 273 packages on <a href="http://cran.r-project.org">CRAN</a> depend on <a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a> for making analyses go faster and further.</p>
+<p>This release brings a fairly large number of continued enhancements, fixes and polishing to <a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a>. These were provided by a total of seven different contributors---which is a new record as well.</p>
+<p>See below for a detailed list of changes extracted from the <code>NEWS</code> file, but some highlights included in this release are</p>
+<ul>
+<li>Several API cleanups, polishes and a pre-announced code removal</li>
+<li>New <code>InternalFunction</code> interface, and new <code>Timer</code> functionality.</li>
+<li>More robust functionality of <code>Rcpp Attributes</code> as well as a new <code>dryRun</code> option.</li>
+<li>The Rcpp FAQ was updated, as was the main Description: in the <code>DESCRIPTION</code> file.</li>
+<li><code>Rcpp.package.skeleton()</code> can now deploy functionality from <a href="http://dirk.eddelbuettel.com/code/pkgkitten.html">pkgKitten</a> to create <a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a> packages that purr.</li>
+</ul>
+<p>One sore point, however, is that we missed that packages using Rcpp Modules appear to require a rebuild. We are sorry for the inconvenience; this has highlighted a shortcoming in our fairly robust and extensive tests. While we test our packages against all known <a href="http://cran.r-project.org">CRAN</a> dependents, such tests check for the ability to <em>compile and run freshly</em> and not whether previously built packages still run. We intend to augment our testing in this direction to avoid a repeat occurrence of such a misfeature.</p>
+<blockquote>
+<h4>
+Changes in Rcpp version 0.11.3 (2014-09-27)
+</h4>
+<ul>
+  <li><p> 
+Changes in Rcpp API:
+</p>
+    <ul>
+    <li><p> 
+The deprecation of <code>RCPP_FUNCTION_*</code> which was announced with release 0.10.5 last year is proceeding as planned, and the file <code>macros/preprocessor_generated.h</code> has been removed.
+</p> </li>
+    <li>
+       <p> 
+<code>Timer</code> no longer records time between steps, but times from the origin. It also gains a <code>get_timers(int)</code> methods that creates a vector of <code>Timer</code> that have the same origin. This is modelled on the <code>Rcpp11</code> implementation and is more useful for situations where we use timers in several threads. <code>Timer</code> also gains a constructor taking a <code>nanotime_t</code> to use as its origin, and a <code>origin</code> method. This can be useful for situations where the number of threads is not known in advance but we still want to track what goes on in each thread.
+</p>
+    </li>
+    <li><p> 
+A cast to <code>bool</code> was removed in the vector proxy code as inconsistent behaviour between clang and g++ compilations was noticed.
+</p> </li>
+    <li><p> 
+A missing <code>update(SEXP)</code> method was added thanks to pull request by Omar Andres Zapata Mesa.
+</p> </li>
+    <li><p> 
+A proxy for <code>DimNames</code> was added.
+</p> </li>
+    <li><p> 
+A <code>no_init</code> option was added for Matrices and Vectors.
+</p> </li>
+    <li><p> 
+The <code>InternalFunction</code> class was updated to work with <code>std::function</code> (provided a suitable C++11 compiler is available) via a pull request by Christian Authmann.
+</p> </li>
+    <li><p> 
+A <code>new_env()</code> function was added to <code>Environment.h</code>
+</p> </li>
+    <li><p> 
+The return value of range eraser for Vectors was fixed in a pull request by Yixuan Qiu.
+</p> </li>
+    </ul>
+  </li>
+  <li><p> 
+Changes in Rcpp Sugar:
+</p>
+    <ul>
+    <li><p> 
+In <code>ifelse()</code>, the returned <code>NA</code> type was corrected for <code>operator[]</code>.
+</p> </li>
+    </ul>
+  </li>
+  <li><p> 
+Changes in Rcpp Attributes:
+</p>
+    <ul>
+    <li><p> 
+Include LinkingTo in DESCRIPTION fields scanned to confirm that C++ dependencies are referenced by package.
+</p> </li>
+    <li><p> 
+Add <code>dryRun</code> parameter to <code>sourceCpp</code>.
+</p> </li>
+    <li><p> 
+Corrected issue with relative path and R chunk use for <code>sourceCpp</code>.
+</p> </li>
+    </ul>
+  </li>
+  <li><p> 
+Changes in Rcpp Documentation:
+</p>
+  <ul>
+    <li><p> 
+The <code>Rcpp-FAQ</code> vignette was updated with respect to OS X issues.
+</p> </li>
+    <li><p> 
+A new entry in the <code>Rcpp-FAQ</code> clarifies the use of licenses.
+</p> </li>
+    <li><p> 
+Vignettes build results no longer copied to <code>/tmp</code> to please CRAN.
+</p> </li>
+    <li><p> 
+The Description in <code>DESCRIPTION</code> has been shortened.
+</p> </li>
+  </ul>
+  </li>
+  <li><p> 
+Changes in Rcpp support functions:
+</p>
+  <ul>
+    <li>
+      <p> 
+The <code>Rcpp.package.skeleton()</code> function will now use <a href="http://CRAN.R-project.org/package=pkgKitten"><span class="pkg">pkgKitten</span></a> package, if available, to create a package which passes <code>R CMD check</code> without warnings. A new <code>Suggests:</code> has been added for <a href="http://CRAN.R-project.org/package=pkgKitten"><span class="pkg">pkgKitten</span></a>.
+</p>
+    </li>
+    <li><p> 
+The <code>modules=TRUE</code> case for <code>Rcpp.package.skeleton()</code> has been improved and now runs without complaints from <code>R CMD check</code> as well.
+</p> </li>
+  </ul>
+  </li>
+  <li><p> 
+Changes in Rcpp unit test functions:
+</p>
+  <ul>
+    <li><p> 
+Functions from the <a href="http://CRAN.R-project.org/package=RUnit"><span class="pkg">RUnit</span></a> package are now prefixed with <code>RUnit::</code>
+</p> </li>
+    <li><p> 
+The <code>testRcppModule</code> and <code>testRcppClass</code> sample packages now pass <code>R CMD check --as-cran</code> cleanly with NOTES or WARNINGS
+</p> </li>
+  </ul>
+  </li>
+</ul>
+</blockquote>
+
+
+<p>Thanks to <a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, you can also look at a <a href="http://dirk.eddelbuettel.com/cranberries/2014/09/29#Rcpp_0.11.3">diff to the previous release</a> As always, even fuller details are on the <a href="http://dirk.eddelbuettel.com/code/rcpp.changelog.html">Rcpp Changelog page</a> and the <a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp page</a> which also leads to the downloads page, the <a href="http://dirk.eddelbuettel.com/code/rcpp/html/index.html">browseable doxygen docs</a> and zip files of doxygen output for the standard formats. A <a href="http://dirk.eddelbuettel.com/code/rcpp/">local directory</a> has source and documentation too. Questions, comments etc should go to the <a href="https://lists.r-forge.r-project.org/cgi-bin/mailman/listinfo/rcpp-devel">rcpp-devel mailing list</a> off the <a href="http://r-forge.r-project.org/projects/rcpp/">R-Forge page</a>.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

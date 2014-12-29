@@ -1,0 +1,74 @@
+---
+title: "RcppArmadillo 0.4.400.0"
+kind: article
+created_at: 2014-08-20 02:00:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+After two pre-releases in the last few days,
+<a href="http://conradsanderson.id.au/">Conrad</a> finalised a new 
+<a href="http://arma.sourceforge.net/">Armadillo</a> version 4.400 today.
+I had kept up with the pre-releases, tested twice against all eighty (!!) 
+<a href="http://cran.r-project.org">CRAN</a> dependents of 
+<a href="http://dirk.eddelbuettel.com/code/rcpp.armadillo.html">RcppArmadillo</a>
+and have hence uploaded RcppArmadillo 0.4.400.0 to 
+<a href="http://cran.r-project.org">CRAN</a> and into
+<a href="http://www.debian.org">Debian</a>.
+
+
+<p></p>
+This release brings a number of new upstream features which are detailed
+below. As included is s bugfix for sparse matrix creation at the
+<a href="http://dirk.eddelbuettel.com/code/rcpp.armadillo.html">RcppArmadillo</a>
+end which was found by the ASAN tests at <a href="http://cran.r-project.org">CRAN</a> ---
+which are similar to the <a href="http://dirk.eddelbuettel.com/blog/2014/08/03#sanitizers_0.1.0">sanitizers</a>
+tests I recently blogged.  I was able to develop and test the fix in the very
+<a href="http://dirk.eddelbuettel.com/code/sanitizers.html">docker r-devel-san images</a>
+I had written about which was nice. Special thanks also to Ryan Curtin for help
+with the fix.
+
+<p></p>
+<blockquote>
+<h4>Changes in RcppArmadillo version 0.4.400.0 (2014-08-19)</h4>
+<ul>
+  <li><p> Upgraded to Armadillo release Version 4.400 (Winter Shark Alley) </p>
+  <ul>
+    <li><p> added <code>gmm_diag</code> class for statistical modelling using Gaussian Mixture Models; 
+    includes multi-threaded implementation of k-means and Expectation-Maximisation for parameter estimation </p>
+    </li>
+    <li><p> added <code>clamp()</code> for clamping values to be between lower and upper limits </p> </li>
+    <li><p> expanded batch insertion constructors for sparse matrices to add values at repeated locations </p> </li>
+    <li><p> faster handling of subvectors by <code>dot()</code> </p> </li>
+    <li><p> faster handling of aliasing by submatrix views </p> </li>
+  </ul>
+  </li>
+  <li><p> Corrected a bug (found by the g++ Address Sanitizer) in sparse
+  matrix initialization where space for a sentinel was allocated, but
+  the sentinel was not set; with extra thanks to Ryan Curtin for help </p> </li>
+  <li><p> Added a few unit tests for sparse matrices
+  </p>
+  </li>
+</ul>
+</blockquote>
+
+Courtesy of <a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, there
+is also a diffstat report for the
+<a href="http://dirk.eddelbuettel.com/cranberries/2014/08/19#RcppArmadillo_0.4.400.0">most recent release</a>.
+As always, more detailed information is on the <a href="http://dirk.eddelbuettel.com/code/rcpp.armadillo.html">RcppArmadillo page</a>.
+Questions, comments etc should go to the
+<a href="https://lists.r-forge.r-project.org/cgi-bin/mailman/listinfo/rcpp-devel">rcpp-devel mailing list</a>
+off the <a href="http://r-forge.r-project.org/projects/rcpp/">R-Forge page</a>.
+
+
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a>
+originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog.
+Please report excessive re-aggregation in third-party for-profit settings. 
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

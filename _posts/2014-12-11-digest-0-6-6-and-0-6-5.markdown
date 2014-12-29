@@ -1,0 +1,28 @@
+---
+title: "digest 0.6.6 (and 0.6.5)"
+kind: article
+created_at: 2014-12-11 01:27:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p>A new release 0.6.6 of the <a href="http://dirk.eddelbuettel.com/code/digest.html">digest</a> package is now on <a href="http://cran.r-project.org">CRAN</a> and in <a href="http://www.debian.org">Debian</a>.</p>
+<p>This release brings the <a href="https://code.google.com/p/xxhash/">xxHash</a> non-cryptographic hash function by Yann Collet, thanks to several pull requests by <a href="http://jimhester.com/">Jim Hester</a>. After the upload of version 0.6.5 we uncovered another lovely non-standardness of Windoze: you cannot format <code>unsigned long long</code> via <code>printf()</code> format strings. Great. Luckily Jim found a quick (and portable) fix via the <code>inttypes.h</code> header, and that went into the 0.6.6 release.</p>
+<p>The release also contains an earlier extension for <code>hmac()</code> to also cover crc32 hashes, kindly provided by Suchen Jin.</p>
+<p>I also made a number of small internal changes such as</p>
+<ul>
+<li>switching (compiled) function registration to package load via a the <code>useDynLib()</code> declaration in <code>NAMESPACE</code>,</li>
+<li>(finally!!) formating code to proper four-space indentation,</li>
+<li>adding some documentation around Jim's pull request, and</li>
+<li>adding a few GPL copyright headers.</li>
+</ul>
+<p><a href="http://dirk.eddelbuettel.com/cranberries/index.html">CRANberries</a> provides the usual summary of changes to the <a href="http://dirk.eddelbuettel.com/cranberries/2013/12/03#digest_0.6.4">previous version</a>.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

@@ -1,0 +1,32 @@
+---
+title: "RcppRedis 0.1.2"
+kind: article
+created_at: 2014-11-07 02:34:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p>A new release of <a href="http://dirk.eddelbuettel.com/code/rcppredis.html">RcppRedis</a> is now on <a href="http://cran.r-project.org">CRAN</a>. It contains additional commands for hashes and sets, all contributed by John Laing and Whit Armstrong.</p>
+<blockquote>
+<h4>
+Changes in version 0.1.2 (2014-11-06)
+</h4>
+<ul>
+    <li><p> 
+New commands <code>execv</code>, <code>hset</code>, <code>hget</code>, <code>sadd</code>, <code>srem</code>, and <code>smembers</code> contributed by John Laing and Whit Armstrong over several pull requests.
+</p> </li>
+</ul>
+</blockquote>
+
+
+
+<p>Courtesy of <a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, there is also a diffstat report for the <a href="http://dirk.eddelbuettel.com/cranberries/2014/11/06#RcppRedis_0.1.2">most recent release</a>. As always, more detailed information is on the <a href="http://dirk.eddelbuettel.com/code/rcppredis.html">RcppRedis page</a> page.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

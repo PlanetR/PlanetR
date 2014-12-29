@@ -1,0 +1,95 @@
+---
+title: "RcppArmadillo 0.4.300.8.0"
+kind: article
+created_at: 2014-06-05 03:02:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+A new minor / bug fix release 4.300.8 of
+<a href="http://arma.sourceforge.net/">Armadillo</a>, the
+templated C++ library for linear algebra, was tagged by
+<a href="http://conradsanderson.id.au/">Conrad</a> in his SVN repo a few days ago,
+following earlier snapshots in the 4.300.* series.
+
+<p></p>
+We had prepared two earlier releases for GitHub but not CRAN in order to accomodate the CRAN
+maintainer's desire of <it>"a release every one to two months"</it> expressed in the
+<a href="http://cran.r-project.org/web/packages/policies.html">CRAN Repo Policy</a>.
+However, two actual bugs in the interaction between MinGW and C++11 were reported on the
+rcpp-devel mailing list, and this releases addresses these. Hence time for new release 0.4.300.8.0 of 
+<a href="http://dirk.eddelbuettel.com/code/rcpp.armadillo.html">RcppArmadillo</a>
+which is now on <a href="http://cran.r-project.org">CRAN</a> and in
+<a href="http://www.debian.org">Debian</a>.
+
+<p></p>
+This release brings a few upstream changes detailed below such as
+nice new upstream changes such as more robust <code>norm()</code> (and related) functions,
+and fixes related to matrix and cube interactions.  From our end, we added a better
+detection of Windows via both <code>_WIN32</code> and <code>WIN32</code> (as the former
+apparently gets undefined by MinGW in C++11 mode). We also added the ability to turn on C++11
+support from R (possible since R 3.1.0) yet also turn it off for Armadillo.  This is needed as
+the prescribed compiler on Windows is g++ 4.6.2 -- which offers a subset of C++11 which is
+good enough for a number of things from the C++11 standard, but not advanced enough for
+everything which Armadillo uses when C++11 support is turned on.  As
+Armadillo continues to offer a choice of C++ standards, we can use the ability to deploy C++11
+only outside of its internals.  It is worth repeating that this issue should only affect
+Windows users wishing to use C++11; other platforms are fine as they generally have more
+modern compilers.
+
+<p></p>
+
+<blockquote>
+<h4>Changes in RcppArmadillo version 0.4.300.8.0 (2014-05-31)</h4>
+<ul>
+  <li><p> Upgraded to Armadillo release Version 4.300.8 (Medieval Cornea Scraper) </p>
+  <ul>
+    <li><p> More robust <code>norm</code>-related functions </p> </li>
+    <li><p> Fixes between interactions between <code>cube</code> and <code>vector</code> types. </p> </li>
+  </ul>
+  </li>
+  <li><p> Adds a <code>#define ARMA_DONT_USE_CXX11</code> to provide an option to turn C++11 off for Armadillo (but client packages may still use it) </p> </li>
+  <li><p> More robust Windows detection by using <code>_WIN32</code> as well as <code>WIN32</code> as the latter gets diabled by MinGW with C++11 </p> </li>
+  <li><p> On Windows, C++11 can be turned off as the Armadillo code base uses more features of C++11 than g++ 4.6.2 version in Rtools implements </p> </li>
+</ul>
+
+<h4>Changes in RcppArmadillo version 0.4.300.5.0 (2014-05-19)</h4>
+<ul>
+  <li><p> Upgraded to Armadillo release Version 4.300.5 (Medieval Cornea Scraper) </p>
+  <ul>
+    <li><p> Handle possible underflows and overflows in <code>norm()</code>, <code>normalise()</code>, <code>norm_dot()</code> </p> </li>
+    <li><p> Fix for handling of null vectors by <code>norm_dot()</code> </p> </li>
+  </ul>
+  </li>
+</ul>
+
+<h4>Changes in RcppArmadillo version 0.4.300.2.0 (2014-05-13)</h4>
+<ul>
+  <li><p> Upgraded to Armadillo release Version 4.300.2 (Medieval Cornea Scraper) </p>
+  <ul>
+    <li><p> faster <code>find()</code> </p> </li>
+  </ul>
+  </li>
+</ul>
+</blockquote>
+
+Courtesy of <a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, there
+is also a diffstat report for the
+<a href="http://dirk.eddelbuettel.com/cranberries/2014/06/04#RcppArmadillo_0.4.300.8.0">most recent release</a>
+As always, more detailed information is on the <a href="http://dirk.eddelbuettel.com/code/rcpp.armadillo.html">RcppArmadillo page</a>.
+Questions, comments etc should go to the
+<a href="https://lists.r-forge.r-project.org/cgi-bin/mailman/listinfo/rcpp-devel">rcpp-devel mailing list</a>
+off the <a href="http://r-forge.r-project.org/projects/rcpp/">R-Forge page</a>.
+
+
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a>
+originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog.
+Please report excessive re-aggregation in third-party for-profit settings. 
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

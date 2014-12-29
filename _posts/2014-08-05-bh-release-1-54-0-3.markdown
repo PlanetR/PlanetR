@@ -1,0 +1,62 @@
+---
+title: "BH release 1.54.0-3"
+kind: article
+created_at: 2014-08-05 03:23:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+A new release of our <a href="http://dirk.eddelbuettel.com/code/bh.html">BH</a> package  
+providing <a href="http://www.boost.org">Boost</a> headers for use by <a href="http://www.r-project.org">R</a>
+is now on the <a href="http://cran.r-project.org">CRAN</a> mirrors.
+
+<img alt="max-heap image"
+     style="float:left;margin:0 10px 10px 0;"
+     width="210" height="210"
+     src="http://upload.wikimedia.org/wikipedia/commons/b/bf/Max-heap.png"/>
+
+This release is the third based on Boost 1.54.0.
+
+<p></p>
+
+At the request of the maintainer of the recent added
+<a href="http://cran.r-project.org">RcppMLPACK</a> package, it adds the
+<a href="http://www.boost.org/doc/libs/1_55_0/doc/html/heap.html">Boost.Heap</a> library. 
+<a href="http://www.boost.org/doc/libs/1_55_0/doc/html/heap.html">Boost.Heap</a>
+implements priority queues which extend beyond 
+the corresponding (and somewhat simpler) class in the STL.  Key features of
+the <a href="http://www.boost.org/doc/libs/1_55_0/doc/html/heap.html">Boost.Heap</a>
+priority queues are mutability, iterators, ability to merge,
+stable sort, and comparison.
+
+<p></p>
+No other changes were made.
+
+<p></p>
+<blockquote>
+<h4>Changes in version 1.54.0-3 (2014-08-03)</h4>
+<ul>
+  <li><p> Added Boost Heap library which will be needed by the next version of <a href="http://CRAN.R-project.org/package=RcppMLPACK"><span class="pkg">RcppMLPACK</span></a> </p> </li>
+</ul>
+</blockquote>
+
+<p></p>
+Courtesy of <a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, there
+is also a diffstat report for the
+<a href="http://dirk.eddelbuettel.com/cranberries/2014/08/04#BH_1.54.0-3">most recent release</a>.
+
+<p></p>
+Comments and suggestions are welcome via the mailing list or issue tracker at the
+<a href="https://github.com/eddelbuettel/bh/">GitHub repo</a>.
+
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a>
+originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog.
+Please report excessive re-aggregation in third-party for-profit settings. 
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

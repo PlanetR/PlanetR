@@ -1,0 +1,47 @@
+---
+title: "RcppArmadillo 0.4.500.0"
+kind: article
+created_at: 2014-11-02 13:28:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p>A few days ago, <a href="http://conradsanderson.id.au/">Conrad</a> provided another minor release of <a href="http://arma.sourceforge.net/">Armadillo</a>. Once again, I had created a GitHub-only pre-release of his pre-release which was tested against (then) all ninety (!!) <a href="http://cran.r-project.org">CRAN</a> dependents of our <a href="http://dirk.eddelbuettel.com/code/rcpp.armadillo.html">RcppArmadillo</a> package, providing a further test for Conrad's code and uploaded RcppArmadillo 0.4.500.0 to <a href="http://cran.r-project.org">CRAN</a> and <a href="http://www.debian.org">Debian</a> once his release was finalized.</p>
+<p>The few changes from his end are summarized below; our end also includes an update / extension to the <code>sample()</code> method provided by Christian Gunning --- and used to great effect in the excellent <a href="http://gallery.rcpp.org/articles/SIR-and-revolution/">Rcpp Gallery post by Jonathan Olmsted</a>.</p>
+<blockquote>
+<h4>
+Changes in RcppArmadillo version 0.4.500.0 (2014-10-30)
+</h4>
+<ul>
+<li><p> 
+Upgraded to Armadillo release Version 4.500 (&quot;Singapore Sling&quot;)
+</p>
+<ul>
+    <li><p> 
+faster handling of complex vectors by <code>norm()</code>
+</p> </li>
+    <li><p> 
+expanded <code>chol()</code> to optionally specify output matrix as upper or lower triangular
+</p> </li>
+    <li><p> 
+better handling of non-finite values when saving matrices as text files
+</p> </li>
+</ul>
+</li>
+<li><p> 
+The <code>sample</code> functionality has been extended to provide the Walker Alias method (including new unit tests) via a pull request by Christian Gunning
+</p> </li> 
+</ul>
+
+</blockquote>
+
+<p>Courtesy of <a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, there is also a diffstat report for the <a href="http://dirk.eddelbuettel.com/cranberries/2014/10/30#RcppArmadillo_0.4.500.0">most recent release</a>. As always, more detailed information is on the <a href="http://dirk.eddelbuettel.com/code/rcpp.armadillo.html">RcppArmadillo page</a>. Questions, comments etc should go to the <a href="https://lists.r-forge.r-project.org/cgi-bin/mailman/listinfo/rcpp-devel">rcpp-devel mailing list</a> off the <a href="http://r-forge.r-project.org/projects/rcpp/">R-Forge</a> page.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

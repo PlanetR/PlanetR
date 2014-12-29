@@ -1,0 +1,115 @@
+---
+title: "Rcpp 0.11.2"
+kind: article
+created_at: 2014-06-09 01:21:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+A new minor release 0.11.2 of 
+<a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a> is now
+on the <a href="http://cran.r-project.org">CRAN</a> network for
+<a href="http://www.r-project.org">GNU R</a>, and binaries for 
+<a href="http://www.debian.org">Debian</a> have also been uploaded.
+
+<p></p>
+The release smoothes a few edges on both the 
+<a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a> side itself, as well
+as on the interaction between
+<a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a> and 
+<a href="http://www.r-project.org">R</a> which since release 3.1.0 offers a
+few new features related to C++11.
+
+<p></p>
+<a href="http://kevinushey.github.io/">Kevin</a> added a couple of neat
+extensions related to vectors, a new <code>ListOf</code> templated
+list class, as well as a new option to warn on implicit casts. We decided not
+to make this option the default as it may be too common in some packages.  JJ took
+care of a few buglets related to the wonderful Rcpp Attributes. See the NEWS
+file section below for details, or the ChangeLog file in the package and on the  
+<a href="http://dirk.eddelbuettel.com/code/rcpp.changelog.html">Rcpp Changelog page</a>.
+Note that the <code>diffstat</code> reported by CRANberries is very large as
+Kevin also committed a whitespace cleanup which touched almost all files.
+
+<p></p>
+As before, we tested this release by building against all
+<a href="http://cran.r-project.org">CRAN</a> packages
+which depend upon <a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a>. In fact we did
+three such runs leading up to the release. Only one package was blacklisted
+(as I currently don't have CUDA set-up), two had what may be internal errors
+or tests which were too restrictive, sixteen suffered from missing packages
+or RGL devices  --- but the remaining 202 packages all built and tested 
+cleanly. Detailed results of those tests (and the scripts for it) are <a
+href="https://github.com/RcppCore/rcpp-logs">in the rcpp-logs repo GitHub</a>.  
+
+<p></p>
+There are a number of other fixes, upgrades and other extensions detailed in
+<code>NEWS</code> file extract below, in the ChangeLog file in the package and on the  
+<a href="http://dirk.eddelbuettel.com/code/rcpp.changelog.html">Rcpp Changelog page</a>.
+
+<p></p>
+<blockquote>
+<h4>Changes in Rcpp version 0.11.2 (2014-06-06</h4>
+<ul>
+  <li><p> Changes in Rcpp API: </p>
+  <ul>
+    <li><p> Implicit conversions, e.g. between <code>NumericVector</code> and
+      <code>IntegerVector</code>, will now give warnings if you use
+      <code>#define RCPP_WARN_ON_COERCE</code> before including the Rcpp
+      headers.
+    </p></li>
+    <li><p> Templated <code>List</code> containers, <code>ListOf&lt;T&gt;</code>, have been 
+      introduced. When subsetting such containers, the return is assumed 
+      to be of type T, allowing code such as 
+      <code>ListOf&lt;NumericVector&gt; x; NumericVector y = x[0] + x[1] + x[2]</code>.
+    </p> </li>
+    <li><p> In a number of instances, returned results are protected and/or cast more carefully. </p> </li>
+  </ul>
+  </li>
+  <li><p> Changes in Rcpp Attributes </p>
+  <ul>
+    <li><p> Trailing line comments are now stripped by the attributes
+      parser. This allows the parser to handle C++ source files
+      containing comments inline with function arguments.
+    </p> </li>
+    <li><p> The <code>USE_CXX1X</code> environment variable is now defined by 
+      the cpp11 plugin when R &gt;= 3.1. Two additional plugins have been
+      added for use with C++0x (eg when using g++ 4.6.* as on Windows)
+      as well as C++1y for compilers beginning to support the next
+      revision of the standard; additional fallback is provided for
+      Windows. 
+    </p> </li>
+    <li> <p><code>compileAttributes()</code> now also considers Imports: which
+      may suppress a warning when running <code>Rcpp.package.skeleton()</code>.
+    </p> </li>
+  </ul>
+  </li>
+</ul>
+</blockquote>
+
+Thanks to
+<a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, you can also look at a 
+<a href="http://dirk.eddelbuettel.com/cranberries/2014/06/08#Rcpp_0.11.2">diff to the previous release</a>.
+As always, even fuller details are on the 
+<a href="http://dirk.eddelbuettel.com/code/rcpp.changelog.html">Rcpp Changelog page</a> and the 
+<a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp page</a> which also
+leads to the downloads, the
+<a href="http://dirk.eddelbuettel.com/code/rcpp/html/index.html">browseable doxygen docs</a> 
+and zip files of doxygen output for the standard formats.
+A <a href="http://dirk.eddelbuettel.com/code/rcpp/">local directory</a>  has source and documentation too. 
+Questions, comments etc should go to the
+<a href="https://lists.r-forge.r-project.org/cgi-bin/mailman/listinfo/rcpp-devel">rcpp-devel mailing list</a>
+off the <a href="http://r-forge.r-project.org/projects/rcpp/">R-Forge page</a>
+
+
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a>
+originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog.
+Please report excessive re-aggregation in third-party for-profit settings. 
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

@@ -1,0 +1,70 @@
+---
+title: "RcppArmadillo 0.4.300.0"
+kind: article
+created_at: 2014-05-05 23:20:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+A new release 4.300 of <a href="http://arma.sourceforge.net/">Armadillo</a>, the templated C++
+library for linear algebra, was released by <a href="http://conradsanderson.id.au/">Conrad</a> a few days ago.
+
+<p></p>
+As usual, this was rolled up in a new
+<a href="http://dirk.eddelbuettel.com/code/rcpp.armadillo.html">RcppArmadillo</a>
+release 0.4.300.0 which is now on <a href="http://cran.r-project.org">CRAN</a> and in
+<a href="http://www.debian.org">Debian</a>.
+
+<p></p>
+This release brings nice new upstream changes such as faster
+<code>find()</code> as well as corresponding functions to find elements which
+are either finite or non-finite, based on a suggestion we made. This may
+need an <a href="http://dirk.eddelbuettel.com/code/rcpp.armadillo.html">RcppArmadillo</a> specific
+extension as R extends the IEEE logic to supported <code>NA</code>,
+<code>NaN</code> and <code>Inf</code> on floating point variables whereas 
+standard C++ (and hence <a href="http://arma.sourceforge.net/">Armadillo</a>)
+only supports the latter two. We hope to work on this <em>shortly</em>.
+
+<p></p>
+Kevin also put in some code to make sure <code>unsigned int</code> vectors
+and matrices are converted correctly, and I updated the short configure
+script checking for complete LAPACK support to account for the R 3.0.3 or
+later case.
+
+<p></p>
+
+<blockquote>
+<h4>Changes in RcppArmadillo version 0.4.300.0 (2014-05-04)</h4>
+<ul>
+  <li><p> Upgraded to Armadillo release Version 4.300 (Medieval Cornea Scraper) </p>
+  <ul>
+    <li><p> faster <code>find()</code> </p> </li>
+    <li><p> added <code>find_finite()</code> and <code>find_nonfinite()</code> for finding indices of finite and non-finite elements </p> </li>
+    <li><p> expressions <code>X=inv(A)*B*C</code> and <code>X=A.i()*B*C</code> are automatically converted to X=solve(A,B*C) </p> </li>
+  </ul>
+  </li>
+  <li><p> Corrected conversion to <code>unsigned int</code> vectors and matrices </p> </li>
+  <li><p> Configure script now checks for R version 3.0.3 or newer to enable complex divide-and-conquer SVD in case of R-supplied LAPACK </p> </li>
+</ul>
+</blockquote>
+
+Courtesy of <a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, there
+is also a diffstat report for the
+<a href="http://dirk.eddelbuettel.com/cranberries/2014/05/05#RcppArmadillo_0.4.300.0">most recent release</a>
+As always, more detailed information is on the <a href="http://dirk.eddelbuettel.com/code/rcpp.armadillo.html">RcppArmadillo page</a>.
+Questions, comments etc should go to the
+<a href="https://lists.r-forge.r-project.org/cgi-bin/mailman/listinfo/rcpp-devel">rcpp-devel mailing list</a>
+off the <a href="http://r-forge.r-project.org/projects/rcpp/">R-Forge page</a>.
+
+
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a>
+originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog.
+Please report excessive re-aggregation in third-party for-profit settings. 
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

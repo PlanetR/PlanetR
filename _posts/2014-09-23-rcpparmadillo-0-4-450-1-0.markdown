@@ -1,0 +1,66 @@
+---
+title: "RcppArmadillo 0.4.450.1.0"
+kind: article
+created_at: 2014-09-23 03:00:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p>Continuing with his standard pace of approximately one new version per month, <a href="http://conradsanderson.id.au/">Conrad</a> released a new minor release of <a href="http://arma.sourceforge.net/">Armadillo</a> a few days ago. As before, I had created a GitHub-only pre-release which was tested against all eighty-seven (!!) <a href="http://cran.r-project.org">CRAN</a> dependents of our <a href="http://dirk.eddelbuettel.com/code/rcpp.armadillo.html">RcppArmadillo</a> package and then uploaded RcppArmadillo 0.4.450.0 to <a href="http://cran.r-project.org">CRAN</a>.</p>
+<p>The <a href="http://cran.r-project.org">CRAN</a> maintainers pointed out that under the R-development release, a NOTE was issued concerning the C-library's <code>rand()</code> call. This is a pretty new NOTE, but it means using the (sometimes poor quality) <code>rand()</code> generator is now a no-no. Now, <a href="http://arma.sourceforge.net/">Armadillo</a> being as robustly engineered as it is offers a <em>new</em> random number generator based on C++11 as well as a fallback generator for those unfortunate enough to live with an older C++98 compiler. (I would like to note here that I find Conrad's continued support for both C++11, offering very useful modern language idioms, as well as the fallback code for continued deployment and usage by those constrained in their choice of compilers rather exemplary --- because contrary to what some people may claim, it is <em>not</em> a matter of one or the other. C++ always was, and continues to be, a multi-paradigm language which can be supported easily by several standard. But I digress...)</p>
+<p>In any event, one cannot argue with <a href="http://cran.r-project.org">CRAN</a> about their prescription of a C++98 compiler. So Conrad and I discussed this over email, and came up with a scheme where a user-package (such as <a href="http://dirk.eddelbuettel.com/code/rcpp.armadillo.html">RcppArmadillo</a>) can provide an alternate generator which <a href="http://arma.sourceforge.net/">Armadillo</a> then deploys. I implemented a first solution which was then altered / reflected by Conrad in a revised version 4.450.1 of <a href="http://arma.sourceforge.net/">Armadillo</a>. I packaged, and now uploaded, that version as <a href="http://dirk.eddelbuettel.com/code/rcpp.armadillo.html">RcppArmadillo</a> 0.4.450.1.0 to both <a href="http://cran.r-project.org">CRAN</a> and into <a href="http://www.debian.org">Debian</a>.</p>
+<p>Besides the RNG change already discussed, this release brings a few smaller changes from the <a href="http://arma.sourceforge.net/">Armadillo</a> side. These are detailed below in the extract from the NEWS file. On the <a href="http://dirk.eddelbuettel.com/code/rcpp.armadillo.html">RcppArmadillo</a> side, we now have support for <a href="http://dirk.eddelbuettel.com/code/pkgkitten.html">pkgKitten</a> which is both very exciting and likely the topic of another blog post with an example of <em>creating an <a href="http://dirk.eddelbuettel.com/code/rcpp.armadillo.html">RcppArmadillo</a> package that purrs</em>. In the process, I overhauled and polished how new packages are created by <code>RcppArmadillo.package.skeleton()</code>. An upcoming blog post may provide an example.</p>
+<blockquote>
+<h4>
+Changes in RcppArmadillo version 0.4.450.1.0 (2014-09-21)
+</h4>
+<ul>
+<li><p> 
+Upgraded to Armadillo release Version 4.450.1 (Spring Hill Fort)
+</p>
+<ul>
+  <li><p> 
+faster handling of matrix transposes within compound expressions
+</p> </li>
+  <li><p> 
+expanded <code>symmatu()</code>/<code>symmatl()</code> to optionally disable taking the complex conjugate of elements
+</p> </li>
+  <li><p> 
+expanded <code>sort_index()</code> to handle complex vectors
+</p> </li>
+  <li><p> 
+expanded the <code>gmm_diag</code> class with functions to generate random samples
+</p> </li>
+</ul>
+</li>
+<li><p> 
+A new random-number implementation for Armadillo uses the RNG from R as a fallback (when C++11 is not selected so the C++11-based RNG is unavailable) which avoids using the older C++98-based <code>std::rand</code>
+</p> </li>
+<li><p> 
+The <code>RcppArmadillo.package.skeleton()</code> function was updated to only set an &quot;Imports:&quot; for Rcpp, but not RcppArmadillo which (as a template library) needs only LinkingTo:
+</p> </li>
+<li><p> 
+The <code>RcppArmadillo.package.skeleton()</code> function will now prefer <code>pkgKitten::kitten()</code> over <code>package.skeleton()</code> in order to create a working package which passes <code>R CMD check</code>.
+</p> </li>
+<li><p> 
+The <a href="http://CRAN.R-project.org/package=pkgKitten"><span class="pkg">pkgKitten</span></a> package is now a <code>Suggests:</code>
+</p> </li>
+<li><p> 
+A manual page was added to provide documentation for the functions provided by the skeleton package.
+</p> </li>
+<li><p> 
+A small update was made to the package manual page.
+</p> </li>
+</ul>
+</blockquote>
+
+<p>Courtesy of <a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, there is also a diffstat report for the <a href="http://dirk.eddelbuettel.com/cranberries/2014/09/22#RcppArmadillo_0.4.450.1.0">most recent release</a>. As always, more detailed information is on the <a href="http://dirk.eddelbuettel.com/code/rcpp.armadillo.html">RcppArmadillo page</a>. Questions, comments etc should go to the <a href="https://lists.r-forge.r-project.org/cgi-bin/mailman/listinfo/rcpp-devel">rcpp-devel mailing list</a> off the <a href="http://r-forge.r-project.org/projects/rcpp/">R-Forge</a> page.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

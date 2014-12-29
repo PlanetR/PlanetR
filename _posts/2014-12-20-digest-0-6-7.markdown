@@ -1,0 +1,20 @@
+---
+title: "digest 0.6.7"
+kind: article
+created_at: 2014-12-20 18:45:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p>Release 0.6.7 of <a href="http://dirk.eddelbuettel.com/code/digest.html">digest</a> package is now on <a href="http://cran.r-project.org">CRAN</a> and in <a href="http://www.debian.org">Debian</a>.</p>
+<p><a href="http://jimhester.com/">Jim Hester</a> was at it again and added <a href="http://en.wikipedia.org/wiki/MurmurHash">murmurHash</a>. I cleaned up several sets of pedantic warnings in some of the source files, updated the test reference out, and that forms version 0.6.7.</p>
+<p><a href="http://dirk.eddelbuettel.com/cranberries/index.html">CRANberries</a> provides the usual summary of changes to the <a href="http://dirk.eddelbuettel.com/cranberries/2014/12/20#digest_0.6.7">previous version</a>.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

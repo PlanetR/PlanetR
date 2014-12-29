@@ -1,0 +1,26 @@
+---
+title: "littler 0.2.1"
+kind: article
+created_at: 2014-10-19 21:09:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p><img alt="max-heap image"
+     style="float:left;margin:0 40px 10px 0;"
+     width="100" height="100"
+     src="http://dirk.eddelbuettel.com/images/letter-r.png"/></p>
+<p>A new maintenance release of <a href="http://dirk.eddelbuettel.com/code/littler.html">littler</a> is available now.</p>
+<p>The main change are a few updates and extensions to the examples provided along with <a href="http://dirk.eddelbuettel.com/code/littler.html">littler</a>. Several of those continue to make use of the wonderful <a href="http://cran.r-project.org/package=docopt">docopt</a> package by Edwin de Jonge. <a href="http://www.carlboettiger.info/">Carl Boettiger</a> and I are making good use of these <a href="http://dirk.eddelbuettel.com/code/littler.html">littler</a> examples, particularly to install directly from <a href="http://cran.r-project.org">CRAN</a> or <a href="https://github.com">GitHub</a>, in our <a href="https://github.com/rocker-org/rocker">Rocker</a> builds of R for <a href="http://www.docker.com">Docker</a> (about which we should have a bit more to blog soon too).</p>
+<p>Full details for the <a href="http://dirk.eddelbuettel.com/code/littler.html">littler</a> release are provided as usual at the <a href="https://github.com/eddelbuettel/littler/blob/master/ChangeLog">ChangeLog</a> page.</p>
+<p>The code is available via the <a href="https://github.com/eddelbuettel/littler">GitHub</a> repo, from tarballs off my <a href="http://dirk.eddelbuettel.com/code/littler.html">littler page</a> and the <a href="http://dirk.eddelbuettel.com/code/littler/">local directory here</a>. A fresh package has gone to the incoming queue at <a href="http://www.debian.org">Debian</a>; Michael Rutter will probably have new <a href="http://cran.r-project.org/bin/linux/ubuntu">Ubuntu binaries at CRAN</a> in a few days too.</p>
+<p>Comments and suggestions are welcome via the mailing list or issue tracker at the <a href="https://github.com/eddelbuettel/littler/">GitHub</a> repo.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+</p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

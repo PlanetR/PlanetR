@@ -1,0 +1,24 @@
+---
+title: "Wilco!!"
+kind: article
+created_at: 2014-12-10 00:47:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p><img alt="Wilco at The Riviera"
+     style="float:left;margin:0 40px 10px 0;"
+     width="480" 
+     src="http://dirk.eddelbuettel.com/images/wilco_riviera_2014-12-08.jpeg"/></p>
+<p>With a bit of luck due to a collegue having a spare ticket, I managed to make it to an awesome <a href="http://wilcoworld.net">Wilco</a> show at <a href="http://jamusa.com/riviera-theatre/">The Riviera</a> in Uptown.</p>
+<p>This concert was part of a set a six shows. Tweedy and the band were fast, and loose, and wonderful, and totally beloved by the home crowd. An truly outstanding show, and a great evening.</p>
+<p>Also: I should get out more often. Last <a href="http://dirk.eddelbuettel.com/blog/2005/11/02#wilco_20051101">blog entry about Wilco</a> was from 2005. Ouch.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

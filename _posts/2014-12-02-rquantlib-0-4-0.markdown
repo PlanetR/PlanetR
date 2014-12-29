@@ -1,0 +1,97 @@
+---
+title: "RQuantLib 0.4.0"
+kind: article
+created_at: 2014-12-02 11:44:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p>A new major release of <a href="http://dirk.eddelbuettel.com/code/rquantlib.html">RQuantLib</a> is now on <a href="http://cran.r-project.org">CRAN</a> and getting to <a href="http://www.debian.org">Debian</a>.</p>
+<p>All C++ source files have been rewritten to take advantage of newer <a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a> features. Several Fixed Income functions have been added, or refreshed, thanks to contributions by Michele Salvadore. Calendar support was greatly expanded thanks to a contribution by Danilo Dias da Silva. All key changes are listed in detail below.</p>
+<blockquote>
+<h4>
+Changes in RQuantLib version 0.4.0 (2014-12-01)
+</h4>
+<ul>
+  <li><p> 
+Changes in RQuantLib code:
+</p>
+  <ul>
+    <li><p> 
+All function interfaces have been rewritten using <a
+      href="http://CRAN.R-project.org/package=Rcpp"><span class="pkg">Rcpp</span></a> Attributes. No <code>SEXP</code> remain in the function signatures. This make the code shorter, more readable and more easily extensible.
+</p></li> 
+    <li><p> 
+The header files have been reorganized so that plugin use is possible. An <code>impl.h</code> files is imported once for each compilation unit: for RQuantLib from the file <code>src/dates.cpp</code> directory, from a sourced file via a <code>#define</code> set by the plugin wrapper.
+</p></li>
+    <li><p>
+<code>as&lt;&gt;()</code> and <code>wrap()</code> converters have added for QuantLib Date types.
+</p> </li> 
+    <li><p> 
+Plugin support has been added, allowing more ad-hoc use via Rcpp Attributes.
+</p> </li>
+    <li><p> 
+Several Fixed Income functions have been added, and/or rewritten to better match the QuantLib signatures; this was done mostly by Michele Salvadore.
+</p> </li> 
+    <li><p> 
+Several Date and Calendar functions have been added.
+</p> </li>
+    <li><p> 
+Calendar support has been greatly expanded thanks to Danilo Dias da Silva.
+</p> </li>
+    <li><p> 
+Exported curve objects are now more parsimonious and advance entries in the <code>table</code> object roughly one business month at a time.
+</p> </li>
+    <li><p> 
+The <code>DiscountCurve</code> and <code>Bond</code> curve construction has been fixed via a corrected evaluation date and omitted the two-year swap rate, as suggested by Luigi Ballabio.
+</p> </li>
+    <li><p> 
+The <code>NAMESPACE</code> file has a tighter rule for export of <code>*.default</code> functions, as suggested by Bill Dunlap
+</p> </li>
+    <li><p> 
+Builds now use OpenMP where available.
+</p> </li>
+    <li><p> 
+The package now depends on QuantLib 1.4.0 or later.
+</p> </li>
+  </ul>
+  </li>
+  
+<li><p> 
+Changes in RQuantLib tests:
+</p>
+  <ul>
+    <li><p> 
+New unit tests for dates have been added.
+</p> </li>
+    <li><p> 
+C++ code for the unit tests has also been converted to <a href="http://CRAN.R-project.org/package=Rcpp"><span class="pkg">Rcpp</span></a> Attributes use; a helper function <code>unitTestSetup()</code> has been added.
+</p> </li>
+    <li><p> 
+Continuous Integration via Travis is now enabled from the GitHub repo.
+</p> </li>
+  </ul>
+  </li>
+
+<li><p> 
+Changes in RQuantLib documentation:
+</p>
+  <ul>
+    <li><p> 
+This NEWS file has been added. Better late than never, as they say.
+</p> </li>
+  </ul>
+  </li>
+</ul>
+</blockquote>
+
+<p>Courtesy of <a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, there is also a diffstat report for the <a href="http://dirk.eddelbuettel.com/cranberries/2014/12/02#RQuantLib_0.4.0">this release</a>. As always, more detailed information is on the <a href="http://dirk.eddelbuettel.com/code/rquantlib.html">RQuantLib page</a>. Questions, comments etc should go to the <a href="https://lists.r-forge.r-project.org/cgi-bin/mailman/listinfo/rquantlib-devel">rquantlib-devel mailing list</a> off the <a href="http://r-forge.r-project.org/projects/rquantlib/">R-Forge</a> page. Issue tickets can be filed at the <a href="https://github.com/eddelbuettel/rquantlib">GitHub repo</a>.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

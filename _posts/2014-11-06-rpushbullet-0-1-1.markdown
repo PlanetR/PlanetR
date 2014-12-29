@@ -1,0 +1,27 @@
+---
+title: "RPushbullet 0.1.1"
+kind: article
+created_at: 2014-11-06 02:17:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p>A minor bugfix release 0.1.1 of the <a href="http://dirk.eddelbuettel.com/code/rpushbullet.html">RPushbullet</a> package (interfacing the neat <a href="http://www.pushbullet.com">Pushbullet</a> service) landed on <a href="http://cran.r-project.org">CRAN</a> yesterday morning.</p>
+<p>It cleans up a small issue related to the ability to transfer files between devices via the <a href="http://www.pushbullet.com">Pushbullet</a> service where the ability to select a (non-default) target device has now been restored.</p>
+<p>With that, allow me to borrow one <em>excellent use case</em> of <a href="http://dirk.eddelbuettel.com/code/rpushbullet.html">RPushbullet</a> from the blog of <a href="http://kbroman.org">Karl Broman</a>: how to use <a href="http://kbroman.wordpress.com/2014/09/04/error-notifications-from-r/">RPushbullet for error notifications from R</a>:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">options</span>(<span class="dt">error =</span> function() {
+    <span class="kw">library</span>(RPushbullet)
+    <span class="kw">pbPost</span>(<span class="st">&quot;note&quot;</span>, <span class="st">&quot;Error&quot;</span>, <span class="kw">geterrmessage</span>())
+})</code></pre>
+<p>This is very clever: should an error occur, you get immediate notification in browser or on your phone. Left as an exercise for the reader is to combine this with the equally excellent rfoaas package (<a href="https://github.com/eddelbuettel/rfoaas">github</a>|<a href="http://cran.r-project.org/web/packages/rfoaas/index.html">cran</a>) to get appropriately colourful error messages...</p>
+<p>More details about the package are at the <a href="http://dirk.eddelbuettel.com/code/rpushbullet.html">RPushbullet webpage</a> and the <a href="https://github.com/eddelbuettel/rpushbullet">RPushbullet GitHub repo</a>.</p>
+<p>Courtesy of <a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, there is also a diffstat report for <a href="http://dirk.eddelbuettel.com/cranberries/2014/11/04#RPushbullet_0.1.1">this release</a>.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+</p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

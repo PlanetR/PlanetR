@@ -1,0 +1,38 @@
+---
+title: "BH release 1.55.0-1"
+kind: article
+created_at: 2014-12-22 11:32:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p>A new release of <a href="http://dirk.eddelbuettel.com/code/bh.html">BH</a>, our package providing (a large part of the) <a href="http://www.boost.org">Boost</a> C++ libraries as a set of template headers for use by <a href="http://www.r-project.org">R</a>, is now on <a href="http://cran.r-project.org">CRAN</a>.</p>
+<p>There are two changes. First, we upgraded to Boost 1.55. While Boost 1.57 is now current, I am playing it somewhat safe and conservative here by relying on what is the current version in Debian (and Ubuntu). I even started from the Debian tarball. This ensures we include nothing not in accordance with the <a href="https://www.debian.org/social_contract#guidelines">Debian Free Software Guidelines</a> (as they are a good proxy for what is acceptable to <a href="http://cran.r-project.org">CRAN</a>). The second change was the addition of <a href="http://www.boost.org/doc/libs/1_57_0/libs/geometry/doc/html/index.html">Boost.Geometry</a> as requested in <a href="https://github.com/eddelbuettel/bh/issues/5">issue ticket 5</a>.</p>
+<p>This may be a good time to recall that best way to get in touch for desired additions in <a href="http://dirk.eddelbuettel.com/code/bh.html">BH</a> are the <a href="https://r-forge.r-project.org/R/?group_id=1469">mailing list</a> or the issue tracker at the <a href="https://github.com/eddelbuettel/bh/">GitHub</a> repo.</p>
+<p>A brief summary of changes from the <code>NEWS</code> file (which we failed to update for the release; the text below is however now in the repo):</p>
+<blockquote>
+<h4>
+Changes in version 1.55.0-1 (2014-12-21)
+</h4>
+
+<ul>
+  <li><p> 
+Upgraded to Boost 1.55 once again from the Debian tarball at <a href="https://packages.debian.org/source/sid/boost1.55">https://packages.debian.org/source/sid/boost1.55</a>
+</p> </li>
+  <li><p> 
+Added Boost Geometry requested in GH ticket #5 by 'teramonagi'
+</p> </li>
+</ul>
+</blockquote>
+
+<p>Courtesy of <a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, there is also a (very long!) <code>diffstat</code> report for the <a href="http://dirk.eddelbuettel.com/cranberries/2014/11/10#BH_1.55.0-1">most recent release</a>.</p>
+<p>Comments and suggestions are welcome via the <a href="https://r-forge.r-project.org/R/?group_id=1469">mailing list</a> or the issue tracker at the <a href="https://github.com/eddelbuettel/bh/">GitHub</a>GitHub repo.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

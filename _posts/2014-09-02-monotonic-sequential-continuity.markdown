@@ -1,0 +1,15 @@
+---
+title: "Monotonic Sequential Continuity"
+kind: article
+created_at: 2014-09-02 13:59:00 UTC
+author: Alstatr
+categories: 
+tags: 
+layout: post
+---
+This problem is the continuation of my <a href="http://alstatr.blogspot.com/2014/08/monotonic-sequence.html" target = "_blank">previous post</a> on Monotonic Sequence.<br/><br/><h3>Problem</h3>Prove the following: <ol><li>If $A_k$ is monotone, then \begin{equation} \mathrm{P}\left(\displaystyle\lim_{n\to\infty} A_n\right)=\displaystyle\lim_{n\to \infty}\mathrm{P}(A_n). \end{equation} </li></ol><br/><h3>Solution</h3><i>Proof</i>. If $\{A_k\}$ is monotone, then \begin{equation}\nonumber \mathrm{P}\left(\lim_{n\to \infty} A_n\right) = \begin{cases} \displaystyle\mathrm{P}\left(\bigcup_{k=1}^\infty A_k\right)&\text{if}\;\{A_k\}\;\text{is expanding}\\ \displaystyle\mathrm{P}\left(\bigcap_{k=1}^\infty A_k\right)&\text{if}\;\{A_k\}\;\text{is contracting} \end{cases}. \end{equation} So if $A_k$ is expanding, then we can write $\displaystyle\bigcup_{k=1}^\infty A_k$ as disjoint unions, \begin{eqnarray} \displaystyle\bigcup_{k=1}^\infty A_k &=& A_1\cup (A_2\cap A_1^c)\cup (A_3\cap A_2^c)\cup \cdots\nonumber\\ &=& A_1\cup (A_2\backslash A_1)\cup (A_3\backslash A_2)\cup \cdots\nonumber \end{eqnarray} <a name='more'></a>Then it follows that \begin{eqnarray} \mathrm{P}\left(\displaystyle\bigcup_{k=1}^\infty A_k\right) &=& \mathrm{P}(A_1)+ \mathrm{P}\left[\displaystyle\sum_{k=2}^{\infty}\left(A_k - A_{k-1}\right)\right]\nonumber\\ &=&\mathrm{P}(A_1)+ \mathrm{P}\left[\displaystyle\lim_{n\to \infty}\sum_{k=2}^{n}\left(A_k - A_{k-1}\right)\right]\nonumber\\ &=&\mathrm{P}(A_1)+ \displaystyle\lim_{n\to \infty}\mathrm{P}\left[\sum_{k=2}^{n}\left(A_k - A_{k-1}\right)\right]\nonumber\\ &=&\mathrm{P}(A_1)+ \displaystyle\lim_{n\to \infty}\left[\left(\mathrm{P}(A_2)-\mathrm{P}(A_1)\right) + \left(\mathrm{P}(A_3)-\mathrm{P}(A_2)\right) + \cdots \right.\nonumber\\ &&+ \left.\left(\mathrm{P}(A_n)-\mathrm{P}(A_{n - 1})\right)\right]\nonumber\\ &=&\mathrm{P}(A_1)+ \displaystyle\lim_{n\to \infty}\left[\mathrm{P}(A_n) - \mathrm{P}(A_1)\right]\nonumber\\ &=&\mathrm{P}(A_1) - \mathrm{P}(A_1) + \displaystyle\lim_{n\to \infty}\mathrm{P}(A_n) = \displaystyle\lim_{n\to \infty}\mathrm{P}(A_n)\nonumber \end{eqnarray} On the other hand, when $A_k$ is contracting then \begin{eqnarray} \mathrm{P}\left(\displaystyle\bigcap_{k=1}^\infty A_k\right) &=& \mathrm{P}(A_1)\cap \mathrm{P}(A_2)\cap \mathrm{P}(A_3)\cap \cdots\nonumber\\ &=&\displaystyle\lim_{n\to \infty}\displaystyle\bigcap_{k=1}^n \mathrm{P}(A_k)\nonumber\\ &=&\displaystyle\lim_{n\to \infty}\mathrm{P}(A_n),\quad\text{since}\;A_k\;\text{is contracting}.\nonumber \end{eqnarray} And that proves the problem.$\hspace{10cm}\blacksquare$<div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Alstatr</a> - check out <a href="http://alstatr.blogspot.com/">Analysis with Programming</a></i>
+  </span>
+</div>

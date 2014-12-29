@@ -1,0 +1,21 @@
+---
+title: "RcppAnnoy 0.0.3"
+kind: article
+created_at: 2014-11-18 11:48:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p>Hours after the <a href="http://dirk.eddelbuettel.com/blog/2014/11/16#rcppannoy_0.0.2">initial blog post</a> announcing the first release of the new package <a href="http://dirk.eddelbuettel.com/code/rcpp.annoy.html">RcppAnnoy</a>, Qiang Kou sent us a very nice <a href="https://github.com/eddelbuettel/rcppannoy/pull/2">pull request</a> adding <code>mmap</code> support in Windows.</p>
+<p>So a new release with Windows support is on now <a href="http://cran.r-project.org">CRAN</a>, and Windows binaries should be available by this evening as usual.</p>
+<p>To recap, <a href="http://dirk.eddelbuettel.com/code/rcpp.annoy.html">RcppAnnoy</a> wraps the small, fast, and lightweight C++ template header library <a href="https://github.com/spotify/annoy">Annoy</a> written by <a href="http://erikbern.com">Erik Bernhardsson</a> for use at <a href="http://www.spotify.com">Spotify</a>. <a href="http://dirk.eddelbuettel.com/code/rcpp.annoy.html">RcppAnnoy</a> uses Rcpp Modules to offer the exact same functionality as the Python module wrapped around <a href="https://github.com/spotify/annoy">Annoy</a>.</p>
+<p>Courtesy of <a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, there is also a diffstat report for <a href="http://dirk.eddelbuettel.com/cranberries/2014/11/18#RcppAnnoy_0.0.3">this release</a>. More detailed information is on the <a href="http://dirk.eddelbuettel.com/code/rcppannoy.html">RcppAnnoy page</a> page.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

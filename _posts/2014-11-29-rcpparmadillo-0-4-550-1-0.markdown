@@ -1,0 +1,51 @@
+---
+title: "RcppArmadillo 0.4.550.1.0"
+kind: article
+created_at: 2014-11-29 11:46:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p>A week ago, <a href="http://conradsanderson.id.au/">Conrad</a> provided another minor release 4.550.0 of <a href="http://arma.sourceforge.net/">Armadillo</a> which has since received one minor correction in 4.550.1.0. As before, I had created a GitHub-only pre-release of his pre-release which was tested against the almost one hundred <a href="http://cran.r-project.org">CRAN</a> dependents of our <a href="http://dirk.eddelbuettel.com/code/rcpp.armadillo.html">RcppArmadillo</a> package. This passed fine as usual, and results are as always in the <a href="https://github.com/RcppCore/rcpp-logs">rcpp-logs</a> repository.</p>
+<p>Processing and acceptance at the <a href="http://cran.r-project.org">CRAN</a> took a little longer as around the same time a fresh failure in unit tests had become apparent on an as-of-yet unannounced new architecture (!!) also tested at <a href="http://cran.r-project.org">CRAN</a>. The R-devel release has since gotten a new <code>capabilities()</code> test for <code>long double</code>, and we now only run this test (for our <code>rmultinom()</code>) if the test asserts that the given R build has this capability. Phew, so with all that the new version in now on <a href="http://cran.r-project.org">CRAN</a>; Windows binaries have been built and I also uploaded new <a href="http://www.debian.org">Debian</a> binaries.</p>
+<p>Changes are summarized below; our end also includes added support for conversion of <code>Field</code> types takes to short pull request by Romain.</p>
+<blockquote>
+<h4>
+Changes in RcppArmadillo version 0.4.550.1.0 (2014-11-26)
+</h4>
+  <ul>
+    <li>
+        <p> 
+Upgraded to Armadillo release Version 4.550.1 (&quot;Singapore Sling Deluxe&quot;)
+</p>
+        <ul>
+          <li><p> 
+added matrix exponential function: <code>expmat()</code>
+</p> </li>
+          <li><p> 
+faster <code>.log_p()</code> and <code>.avg_log_p()</code> functions in the <code>gmm_diag</code> class when compiling with OpenMP enabled
+</p> </li>
+          <li><p> 
+faster handling of in-place addition/subtraction of expressions with an outer product
+</p> </li>
+          <li><p> 
+applied correction to <code>gmm_diag</code> relative to the 4.550 release
+</p> </li>
+        </ul>
+    </li>
+    <li><p> 
+The Armadillo Field type is now converted in <code>as&lt;&gt;</code> conversions
+</p> </li>
+  </ul>
+</blockquote>
+
+<p>Courtesy of <a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, there is also a diffstat report for the <a href="http://dirk.eddelbuettel.com/cranberries/2014/11/28#RcppArmadillo_0.4.550.1.0">most recent release</a>. As always, more detailed information is on the <a href="http://dirk.eddelbuettel.com/code/rcpp.armadillo.html">RcppArmadillo page</a>. Questions, comments etc should go to the <a href="https://lists.r-forge.r-project.org/cgi-bin/mailman/listinfo/rcpp-devel">rcpp-devel mailing list</a> off the <a href="http://r-forge.r-project.org/projects/rcpp/">R-Forge</a> page.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

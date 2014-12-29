@@ -1,0 +1,63 @@
+---
+title: "RcppCNPy 0.2.3"
+kind: article
+created_at: 2014-04-11 00:49:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+R 3.1.0 came out today. Among the (impressive and long as usual) <a
+href="http://cran.r-project.org/src/base/NEWS.html">list of changes</a> is
+the added ability to specify <code>CXX_STD = CXX11</code> in order to get
+C++11 (or the best available subset on older compilers).  This brings a
+number of changes and opportunities which are frankly too numerous to be
+discussed in this short post.  But it also permits us, at long last, to use <code>long
+long</code> integer types.
+
+<p></p>
+For RcppCNPy, this means that we can finally cover NumPy integer data (along
+with the double precision we had from the start) on all
+platforms.  Python encodes these as an int64, and that type was unavailable
+(at least in 32-bit OSs) until we got <code>long long</code> made available
+to us by R.
+So today I made the change to depend on R 3.1.0, and select C++11 which
+allowed us to free the code from a number if <code>#ifdef</code> tests.  This
+all worked out swimmingly and the new package has already been rebuilt for
+Windows.
+
+<p></p>
+I also updated the vignette, and refreshed its look and feel. 
+Full changes are listed below.
+
+<p></p>
+
+<blockquote>
+<h4>Changes in version 0.2.3 (2014-04-10)</h4>
+<ul>
+  <li> <p> <code>src/Makevars</code> now sets <code>CXX_STD = CXX11</code> which also provides the <code>long long</code> type on all platforms, so integer file support is no longer conditional. </p> </li>
+  <li> <p> Consequently, code conditional on <code>RCPP_HAS_LONG_LONG_TYPES</code> has been simplified and is no longer conditional. </p> </li>
+  <li> <p> The package now depends on R 3.1.0 or later to allow this. </p> </li>
+  <li><p> The vignette has been updated and refreshed to reflect this. </p> </li>
+</ul>
+</blockquote>
+
+<p>
+
+<a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a> also provides a diffstat report
+<a href="http://dirk.eddelbuettel.com/cranberries/2014/04/10#RcppCNPy_0.2.3">for the latest release</a>.
+As always, feedback is welcome and the 
+<a href="https://lists.r-forge.r-project.org/cgi-bin/mailman/listinfo/rcpp-devel">rcpp-devel mailing list</a>
+off the <a href="http://r-forge.r-project.org/projects/rcpp/">R-Forge page for Rcpp</a> is
+the best place to start a discussion.
+
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a>
+originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog.
+Please report excessive re-aggregation in third-party for-profit settings. 
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

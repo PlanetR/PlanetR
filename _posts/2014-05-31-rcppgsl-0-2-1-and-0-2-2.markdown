@@ -1,0 +1,83 @@
+---
+title: "RcppGSL 0.2.1 and 0.2.2"
+kind: article
+created_at: 2014-05-31 21:35:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+A few days ago, version 0.2.1 of
+<a href="http://dirk.eddelbuettel.com/code/rcpp.gsl.html">RcppGSL</a>---our
+interface package between
+<a href="http://www.r-project.org">R</a> and the 
+<a href="http://www.gnu.org/software/gsl/">GNU GSL</a> using our
+<a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a> package for
+seamless R and C++ integration---appeared on
+<a href="http://cran.r-project.org">CRAN</a> making it the first release in
+some time.
+
+<p></p>
+And it turned that this version tickled an obscure and long-dormant bug under
+clang which was found on OS X Mavericks---which <a href="http://kevinushey.github.io/">Kevin Ushey</a>
+consequently squashed. So this is now reflected in version 0.2.2 which just
+arrived on <a href="http://cran.r-project.org">CRAN</a>.
+
+<p></p>
+
+Besides the bugfix, a few things were modernized to reflect capabilities 
+of <a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a> 0.11.0
+and later.  The releases also contain a few changes that had accumulated
+since the previous release in 2012 such as an additional example using
+B-splines, and use of updated vignette build options provided by R.
+
+<p></p>
+The NEWS file entries follows below:
+
+<p></p>
+
+<blockquote>
+<h4>Changes in version 0.2.2 (2014-05-31)</h4>
+<ul>
+  <li><p> A subtle bug (tickled only by clang on some OS versions) in vector and matrix view initialization was corrected by Kevin Ushey </p> </li>
+</ul>
+
+<h4>Changes in version 0.2.1 (2014-05-26)</h4>
+<ul>
+  <li><p> Added new example based on B-splines example in GSL manual illustrating simple GSL use via Rcpp attributes </p> </li>
+  <li><p> Vignette compilation has been reverted to using <span class="pkg">highlight</span> since version 0.4.2 or greater can be used as a vignette engine (with R 3.0.* or later). </p> </li>
+  <li><p> Vignette compilation is now being done by <code>R CMD build</code> as R 3.0.0 supports different vignette engines, so the vignette build process has been simplified. A convenience helper script has also been added for command-line builds. </p> </li>
+  <li><p> Unit tests now use <code>sourceCpp()</code> instead of <code>cxxfunction()</code> from the <span class="pkg">inline</span> package </p> </li>
+  <li><p> The <code>DESCRIPTION</code> file now uses <code>Suggests: Rcpp</code> (instead of <code>Depends: Rcpp</code>) to permit building of the vignette </p> </li>
+  <li><p> The package now takes advantage of the simplified build process available with Rcpp (&gt;= 0.11.0) </p> </li>
+  <li><p> Similar updates to the build process were made for the example package included with RcppGSL </p> </li>
+</ul>
+
+
+<p></p>
+And courtesy of
+<a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, a
+summaries of changes to  
+<a href="http://dirk.eddelbuettel.com/cranberries/2014/05/27#RcppGSL_0.2.1"> release 0.2.0</a>
+and this week's 
+<a href="http://dirk.eddelbuettel.com/cranberries/2014/05/31#RcppGSL_0.2.2"> release 0.2.1</a>
+are available.
+
+<p></p>
+More information is on the 
+<a href="http://dirk.eddelbuettel.com/code/rcpp.gsl.html">RcppGSL page</a>.
+Questions, comments etc should go to the
+<a href="https://lists.r-forge.r-project.org/cgi-bin/mailman/listinfo/rcpp-devel">rcpp-devel mailing list</a>
+off the <a href="http://r-forge.r-project.org/projects/rcpp/">R-Forge page</a>.
+
+<p></p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a>
+originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog.
+Please report excessive re-aggregation in third-party for-profit settings. 
+<p></p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

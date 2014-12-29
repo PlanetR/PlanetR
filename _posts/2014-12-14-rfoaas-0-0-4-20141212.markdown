@@ -1,0 +1,20 @@
+---
+title: "rfoaas 0.0.4.20141212"
+kind: article
+created_at: 2014-12-14 00:20:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p>A new version of rfoaas is now on <a href="http://cran.r-project.org">CRAN</a>. The rfoaas package provides an interface for <a href="http://www.r-project.org">R</a> to the most excellent <a href="http://www.foaas.com">FOAAS</a> service -- which provides a modern, scalable and RESTful web service for the frequent need to tell someone to eff off.</p>
+<p>The <a href="http://www.foaas.com">FOAAS</a> backend gets updated in spurts, and yesterday a few pull requests were integrated, including one from yours truly. So with that it was time for an update to rfoaas. As the version number upstream did not change (bad, bad, practice) I appended the date the version number.</p>
+<p><a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a> also provides a <a href="http://dirk.eddelbuettel.com/cranberries/2014/12/13#rfoaas_0.0.4.20141212">diff to the previous release</a>. Questions, comments etc should go to the <a href="https://github.com/eddelbuettel/rfoaas/issues">GitHub issue tracker</a> off the <a href="https://github.com/eddelbuettel/rfoaas">GitHub repo</a>.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>
