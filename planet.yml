@@ -24,8 +24,8 @@ blogs:
   - author: "Dirk Eddelbuettel"
     feed: "http://dirk.eddelbuettel.com/blog/index.rss"
 
-  - author: "Alstatr"
-    feed: "http://alstatr.blogspot.com/feeds/posts/default"
+#  - author: "Alstatr"
+#    feed: "http://alstatr.blogspot.com/feeds/posts/default"
 
   - author: "Blogistic Reflections"
     feed: "http://blogisticreflections.wordpress.com/feed/"
