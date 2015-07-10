@@ -72,4 +72,4 @@ exclude:
     - Gemfile
     - Gemfile.lock
     - LICENSE
-    - README.md
+    - [vendor]
