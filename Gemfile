@@ -2,4 +2,6 @@
 source "https://rubygems.org"
 
 gem "planet"
+gem 'github-pages'
+gem 'html-proofer'
 
