@@ -3,6 +3,7 @@ sudo: false
 rvm:
   - 2.1
 script:
+  - bundle exec planet generate
   - bundle exec jekyll build --trace --config _config.yml,_config_public.yml
   - bundle exec htmlproof ./_posts --only-4xx --check-favicon --check-html
 env:
