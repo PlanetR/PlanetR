@@ -1,0 +1,60 @@
+---
+title: "Rcpp 0.11.6"
+kind: article
+created_at: 2015-05-02 13:59:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p>The new release 0.11.5 of <a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a> arrived on the <a href="http://cran.r-project.org">CRAN</a> network for <a href="http://www.r-project.org">GNU R</a> yesterday; the corresponding <a href="http://www.debian.org">Debian</a> package has also been uploaded.</p>
+<p><a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a> has become <em>the</em> most popular way of enhancing <a href="http://www.r-project.org">GNU R</a> with C++ code. As of today, 373 packages on <a href="http://cran.r-project.org">CRAN</a> depend on <a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a> for making analyses go faster and further; <a href="http://www.bioconductor.org">BioConductor</a> adds another 57 packages, and casual searches on <a href="https://github.com">GitHub</a> suggests many more.</p>
+<p>This version adds a little more polish and refinement around things we worked on previous releases to solidify builds, installation and the run-time experience. It does not bring anything new or majorrelease continues the 0.11.* release cycle, adding another large number of small bug fixes, polishes and enhancements. As always, you can follow the development via the <a href="https://github.com/RcppCore/Rcpp">GitHub repo</a> and particularly the <a href="https://github.com/RcppCore/Rcpp/issues">Issue tickets</a> and <a href="https://github.com/RcppCore/Rcpp/pulls">Pull Requests</a>. And any discussions, questions, ... regarding <a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a> are always welcome at the <a href="https://lists.r-forge.r-project.org/cgi-bin/mailman/listinfo/rcpp-devel">rcpp-devel mailing list</a>.</p>
+<p>See below for a detailed list of changes extracted from the <code>NEWS</code> file.</p>
+<blockquote>
+<h4>
+Changes in Rcpp version 0.11.6 (2015-05-01)
+</h4>
+<ul>
+  <li><p> 
+Changes in Rcpp API:
+</p>
+  <ul>
+    <li><p> 
+The unwinding of exceptions was refined to protect against inadvertent memory leaks.
+</p> </li>
+    <li><p> 
+Header files now try even harder not to let macro definitions leak.
+</p> </li>
+    <li><p> 
+Matrices have a new default constructor for zero-by-zero dimension matrices (via a pull request by Dmitrii Meleshko).
+</p> </li>
+    <li><p> 
+A new <code>empty()</code> string constructor was added (via another pull request).
+</p> </li>
+    <li><p> 
+Better support for Vectors with a storage policy different from the default, i.e. <code>NoProtectStorage</code>, was added.
+</p> </li>
+  </ul>
+  </li>
+  <li><p> 
+Changes in Rcpp Attributes:
+</p>
+  <ul>
+    <li><p> 
+Rtools 3.3 is now supported.
+</p> </li>
+  </ul>
+  </li>
+</ul>
+</blockquote>
+
+<p>Thanks to <a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, you can also look at a <a href="http://dirk.eddelbuettel.com/cranberries/2015/05/01#Rcpp_0.11.6">diff to the previous release</a> As always, even fuller details are on the <a href="http://dirk.eddelbuettel.com/code/rcpp.changelog.html">Rcpp Changelog page</a> and the <a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp page</a> which also leads to the downloads page, the <a href="http://dirk.eddelbuettel.com/code/rcpp/html/index.html">browseable doxygen docs</a> and zip files of doxygen output for the standard formats. A <a href="http://dirk.eddelbuettel.com/code/rcpp/">local directory</a> has source and documentation too. Questions, comments etc should go to the <a href="https://lists.r-forge.r-project.org/cgi-bin/mailman/listinfo/rcpp-devel">rcpp-devel mailing list</a> off the <a href="http://r-forge.r-project.org/projects/rcpp/">R-Forge page</a>.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

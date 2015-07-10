@@ -1,0 +1,36 @@
+---
+title: "RInside 0.2.13"
+kind: article
+created_at: 2015-05-21 01:41:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p>A new release 0.2.13 of <a href="http://dirk.eddelbuettel.com/code/rinside.html">RInside</a> is now on <a href="http://cran.r-project.org">CRAN</a>. <a href="http://dirk.eddelbuettel.com/code/rinside.html">RInside</a> provides a set of convenience classes which facilitate embedding of <a href="http://www.r-project.org">R</a> inside of C++ applications and programs, using the classes and functions provided by <a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a>.</p>
+<p>This release works around a bug in R 3.2.0, and addressed in R 3.2.0-patched. The NEWS extract below has more details.</p>
+<blockquote>
+<h4>
+Changes in RInside version 0.2.13 (2015-05-20)
+</h4>
+  <ul>
+  <li><p> 
+Added workaround for a bug in R 3.2.0: by including the file <code>RInterface.h</code> only once we do not getting linker errors due to multiple definitions of <code>R_running_as_main_program</code> (which is now addressed in R-patched as well).
+</p>
+  </li>
+  <li><p> 
+Small improvements to the Travis CI script.
+</p> </li>
+</ul>
+
+</blockquote>
+
+<p><a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a> also provides a short report with <a href="http://dirk.eddelbuettel.com/cranberries/2015/05/20#RInside_0.2.13">changes from the previous release</a>. More information is on the <a href="http://dirk.eddelbuettel.com/code/rinside.html">RInside page</a>. Questions, comments etc should go to the <a href="https://lists.r-forge.r-project.org/cgi-bin/mailman/listinfo/rcpp-devel">rcpp-devel mailing list</a> off the <a href="http://r-forge.r-project.org/projects/rcpp/">Rcpp R-Forge page</a>.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

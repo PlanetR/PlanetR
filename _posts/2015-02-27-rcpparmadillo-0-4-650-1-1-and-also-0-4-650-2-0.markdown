@@ -1,0 +1,56 @@
+---
+title: "RcppArmadillo 0.4.650.1.1 (and also 0.4.650.2.0)"
+kind: article
+created_at: 2015-02-27 02:01:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p>A new <a href="http://arma.sourceforge.net/">Armadillo</a> release 4.650.1 was released by <a href="http://conradsanderson.id.au/">Conrad</a> a few days ago. Armadillo is a powerful and expressive C++ template library for linear algebra aiming towards a good balance between speed and ease of use with a syntax deliberately close to a Matlab.</p>
+<p>It turned out that this release had one shortcoming with respect to the C++11 RNG initializations in the R use case (where we need to protect the users from the C++98 RNG deemed unsuitable by the <a href="http://cran.r-project.org">CRAN</a> gatekeepers). And this lead to upstream release 4.650.1 which we wrapped into <a href="http://dirk.eddelbuettel.com/code/rcpp.armadillo.html">RcppArmadillo</a> 0.4.650.1.1. As before this, was tested against all 107 reverse dependencies of <a href="http://dirk.eddelbuettel.com/code/rcpp.armadillo.html">RcppArmadillo</a> on the <a href="http://cran.r-project.org">CRAN</a> repo.</p>
+<p>This version is now on <a href="http://cran.r-project.org">CRAN</a>, and was just uploaded to <a href="http://www.debian.org">Debian</a>. Its changes are summarized below based on the <code>NEWS.Rd</code> file.</p>
+<blockquote>
+<h4>
+Changes in RcppArmadillo version 0.4.650.1.1 (2015-02-25)
+</h4>
+<ul>
+  <li><p> 
+Upgraded to Armadillo release Version 4.650.1 (&quot;Intravenous Caffeine Injector&quot;)
+</p>
+  <ul>
+    <li><p> 
+added <code>randg()</code> for generating random values from gamma distributions (C++11 only)
+</p> </li>
+    <li><p> 
+added <code>.head_rows()</code> and <code>.tail_rows()</code> to submatrix views
+</p> </li>
+    <li><p> 
+added <code>.head_cols()</code> and <code>.tail_cols()</code> to submatrix views
+</p> </li>
+    <li><p> 
+expanded <code>eigs_sym()</code> to optionally calculate eigenvalues with smallest/largest algebraic values fixes for handling of sparse matrices
+</p> </li>
+  </ul>
+  </li>
+  <li><p> 
+Applied small correction to main header file to set up C++11 RNG whether or not the alternate RNG (based on R, our default) is used
+</p> </li>
+</ul>
+</blockquote>
+
+<p>Now, it turns out that another small fix was needed for the corner case of a submatrix within a submatrix, ie <code>V.subvec(1,10).tail(5)</code>. I decided not to re-release this to <a href="http://cran.r-project.org">CRAN</a> given the <a href="http://cran.r-project.org/web/packages/policies.html">CRAN Repository Policy</a> preference for releases <em>“no more than every 1–2 months”</em>.</p>
+<p>But fear not, for we now have <a href="http://dirk.eddelbuettel.com/code/drat.html">drat</a>. I created a drat package repository in the <a href="https://github.com/RcppCore">RcppCore</a> account (to not put a larger package into my main drat repository often used via a fork to initialize a drat). So now with these two simple commands</p>
+<pre class="sourceCode r"><code class="sourceCode r">## if needed, first install &#39;drat&#39; via:   install.packages(&quot;drat&quot;)
+drat:::<span class="kw">add</span>(<span class="st">&quot;RcppCore&quot;</span>)
+<span class="kw">update.packages</span>()</code></pre>
+<p>you will get the newest <a href="http://dirk.eddelbuettel.com/code/rcpp.armadillo.html">RcppArmadillo</a> via this drat package repository. And course <code>install.packages(&quot;RcppArmadillo&quot;)</code> would also work, but takes longer to type :)</p>
+<p>Lastly, courtesy of <a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, there is also a diffstat report for the <a href="http://dirk.eddelbuettel.com/cranberries/2015/02/26#RcppArmadillo_0.4.650.1.1">most recent CRAN release</a>. As always, more detailed information is on the <a href="http://dirk.eddelbuettel.com/code/rcpp.armadillo.html">RcppArmadillo page</a>. Questions, comments etc should go to the <a href="https://lists.r-forge.r-project.org/cgi-bin/mailman/listinfo/rcpp-devel">rcpp-devel mailing list</a> off the <a href="http://r-forge.r-project.org/projects/rcpp/">R-Forge</a> page.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

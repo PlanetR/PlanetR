@@ -1,0 +1,43 @@
+---
+title: "RcppArmadillo 0.5.100.1.0"
+kind: article
+created_at: 2015-05-02 13:46:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p>A new minor release 5.100.1 of <a href="http://arma.sourceforge.net/">Armadillo</a> was released by <a href="http://conradsanderson.id.au/">Conrad</a> yesterday. Armadillo is a powerful and expressive C++ template library for linear algebra aiming towards a good balance between speed and ease of use with a syntax deliberately close to a Matlab.</p>
+<p>Our corresponding <a href="http://dirk.eddelbuettel.com/code/rcpp.armadillo.html">RcppArmadillo</a> release 0.5.100.1.0 also reached <a href="http://cran.r-project.org">CRAN</a> and <a href="http://www.debian.org">Debian</a> yesterday. See below for the brief list of changes.</p>
+<blockquote>
+<h4>
+Changes in RcppArmadillo version 0.5.100.1.0 (2015-05-01)
+</h4>
+  <ul>
+  <li><p> 
+Upgraded to Armadillo release 5.100.1 (&quot;Ankle Biter Deluxe&quot;)
+</p>
+    <ul>
+      <li><p> 
+added <code>interp1()</code> for 1D interpolation
+</p> </li>
+      <li><p> 
+added <code>.is_sorted()</code> for checking whether a vector or matrix has sorted elements
+</p> </li>
+      <li><p> 
+updated physical constants to NIST 2010 CODATA values
+</p> </li>
+    </ul>
+  </li>
+  </ul>
+</blockquote>
+
+<p>Courtesy of <a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, there is also a diffstat report for the <a href="http://dirk.eddelbuettel.com/cranberries/2015/05/01#RcppArmadillo_0.5.100.1.0">most recent CRAN release</a>. As always, more detailed information is on the <a href="http://dirk.eddelbuettel.com/code/rcpp.armadillo.html">RcppArmadillo page</a>. Questions, comments etc should go to the <a href="https://lists.r-forge.r-project.org/cgi-bin/mailman/listinfo/rcpp-devel">rcpp-devel mailing list</a> off the <a href="http://r-forge.r-project.org/projects/rcpp/">R-Forge</a> page.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

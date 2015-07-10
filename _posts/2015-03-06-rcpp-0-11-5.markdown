@@ -1,0 +1,103 @@
+---
+title: "Rcpp 0.11.5"
+kind: article
+created_at: 2015-03-06 11:26:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p>The new release 0.11.5 of <a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a> just reached the <a href="http://cran.r-project.org">CRAN</a> network for <a href="http://www.r-project.org">GNU R</a>, and a <a href="http://www.debian.org">Debian</a> package has also been be uploaded.</p>
+<p><a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a> has become <em>the</em> most popular way of enhancing <a href="http://www.r-project.org">GNU R</a> with C++ code. As of today, 345 packages on <a href="http://cran.r-project.org">CRAN</a> depend on <a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a> for making analyses go faster and further; <a href="http://www.bioconductor.org">BioConductor</a> adds another 41 packages, and casual searches on <a href="https://github.com">GitHub</a> suggests dozens mores.</p>
+<p>This release continues the 0.11.* release cycle, adding another large number of small bug fixes, polishes and enhancements. Since the <a href="http://dirk.eddelbuettel.com/blog/2015/01/24#rcppgsl_0.2.4">previous release in January</a>, we incorporated a number of pull requests and changes from several contributors. This time, JJ deserves a special mention as he is responsible for a metric ton of the changes listed below, making Rcpp Attributes even more awesome. As always, you can follow the development via the <a href="https://github.com/RcppCore/Rcpp">GitHub repo</a> and particularly the <a href="https://github.com/RcppCore/Rcpp/issues">Issue tickets</a> and <a href="https://github.com/RcppCore/Rcpp/pulls">Pull Requests</a>. And any discussions, questions, ... regarding <a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a> are always welcome at the <a href="https://lists.r-forge.r-project.org/cgi-bin/mailman/listinfo/rcpp-devel">rcpp-devel mailing list</a>.</p>
+<p>See below for a detailed list of changes extracted from the <code>NEWS</code> file.</p>
+<blockquote>
+<h4>
+Changes in Rcpp version 0.11.5 (2015-03-04)
+</h4>
+  <li><p> 
+Changes in Rcpp API:
+</p>
+  <ul>
+    <li><p> 
+An error handler for tinyformat was defined to prevent the <code>assert()</code> macro from spilling.
+</p> </li>
+    <li><p> 
+The <code>Rcpp::warning</code> function was added as a wrapper for <code>Rf_warning</code>.
+</p> </li>
+    <li>
+      <p> 
+The <code>XPtr</code> class was extended with new <code>checked_get</code> and <code>release</code> functions as well as improved behavior (throw an exception rather than crash) when a NULL external pointer is dereferenced.
+</p> 
+    </li>
+    <li><p> 
+R code is evaluated within an <code>R_toplevelExec</code> block to prevent user interrupts from bypassing C++ destructors on the stack.
+</p> </li>
+    <li><p> 
+The <code>Rcpp::Environment</code> constructor can now use a supplied parent environment.
+</p> </li>
+    <li><p> 
+The <code>Rcpp::Function</code> constructor can now use a supplied environment or namespace.
+</p> </li>
+    <li><p> 
+The <code>attributes_hidden</code> macro from R is used to shield internal functions; the <code>R_ext/Visibility.h</code> header is now included as well.
+</p> </li>
+    <li><p> 
+A <code>Rcpp::print</code> function was added as a wrapper around <code>Rf_PrintValue</code>.
+</p> </li>
+  </ul>
+  </li>
+  <li><p> 
+Changes in Rcpp Attributes:
+</p>
+  <ul>
+    <li><p> 
+The <code>pkg_types.h</code> file is now included in <code>RcppExports.cpp</code> if it is present in either the <code>inst/include</code> or <code>src</code>.
+</p> </li>
+    <li>
+      <p>
+        
+<code>sourceCpp</code> was modified to allow includes of local files (e.g. <code>#include &quot;foo.hpp&quot;</code>). Implementation files (<em>.cc; </em>.cpp) corresponding to local includes are also automatically built if they exist.
+</p> 
+    </li> 
+    <li><p> 
+The generated attributes code was simplified with respect to <code>RNGScope</code> and now uses <code>RObject</code> and its destructor rather than <code>SEXP</code> protect/unprotect.
+</p> </li>
+    <li><p> 
+Support addition of the <code>rng</code> parameter in <code>Rcpp::export</code> to suppress the otherwise automatic inclusion of <code>RNGScope</code> in generated code.
+</p> </li>
+    <li><p> 
+Attributes code was made more robust and can e.g. no longer recurse.
+</p> </li>
+    <li><p> 
+Version 3.2 of the Rtools is now correctly detected as well.
+</p> </li>
+    <li><p> 
+Allow 'R' to come immediately after '***' for defining embedded R code chunks in sourceCpp.
+</p> </li>
+    <li><p> 
+The attributes vignette has been updated with documentation on new features added over the past several releases.
+</p> </li>
+  </ul>
+  </li>
+  <li><p> 
+Changes in Rcpp tests:
+</p>
+  <ul>
+    <li><p> 
+On Travis CI, all build dependencies are installed as binary <code>.deb</code> packages resulting in faster tests.
+</p> </li>
+  </ul>
+  </li>
+</ul>
+</blockquote>
+
+<p>Thanks to <a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, you can also look at a <a href="http://dirk.eddelbuettel.com/cranberries/2015/03/06#Rcpp_0.11.5">diff to the previous release</a> As always, even fuller details are on the <a href="http://dirk.eddelbuettel.com/code/rcpp.changelog.html">Rcpp Changelog page</a> and the <a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp page</a> which also leads to the downloads page, the <a href="http://dirk.eddelbuettel.com/code/rcpp/html/index.html">browseable doxygen docs</a> and zip files of doxygen output for the standard formats. A <a href="http://dirk.eddelbuettel.com/code/rcpp/">local directory</a> has source and documentation too. Questions, comments etc should go to the <a href="https://lists.r-forge.r-project.org/cgi-bin/mailman/listinfo/rcpp-devel">rcpp-devel mailing list</a> off the <a href="http://r-forge.r-project.org/projects/rcpp/">R-Forge page</a>.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

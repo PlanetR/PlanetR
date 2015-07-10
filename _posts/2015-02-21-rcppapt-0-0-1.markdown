@@ -1,0 +1,38 @@
+---
+title: "RcppAPT 0.0.1"
+kind: article
+created_at: 2015-02-21 14:33:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p>Over the last few days I put together a new package <a href="http://dirk.eddelbuettel.com/code/rcpp.apt.html">RcppAPT</a> which interfaces the C++ library behind the awesome <code>apt</code>, <code>apt-get</code>, <code>apt-cache</code>, ... commands and their GUI-based brethren.</p>
+<p>The package currently implements two functions which permit search for package information via a regular expression, as well as a (vectorised) package name-based check. More to come, and contributions would be very welcome.</p>
+<p>A few examples just to illustrate follow.</p>
+<pre class="sourceCode r"><code class="sourceCode r">R&gt;<span class="st"> </span><span class="kw">hasPackages</span>(<span class="kw">c</span>(<span class="st">&quot;r-cran-rcpp&quot;</span>, <span class="st">&quot;r-cran-rcppapt&quot;</span>))
+   r-cran-rcpp r-cran-rcppapt 
+          <span class="ot">TRUE</span>          <span class="ot">FALSE</span> </code></pre>
+<p>This shows that <a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a> is (of course) available as a binary, but this (very new) package is (unsurprisingly) not yet available pre-built.</p>
+<p>We can search by regular expression:</p>
+<pre class="sourceCode r"><code class="sourceCode r">R&gt;<span class="st"> </span><span class="kw">library</span>(RcppAPT)
+R&gt;<span class="st"> </span><span class="kw">getPackages</span>(<span class="st">&quot;^r-base-c.&quot;</span>)
+          Package      Installed       Section
+<span class="dv">1</span> r-base-core-dbg <span class="fl">3.1.2</span>-1utopic0 universe/math
+<span class="dv">2</span> r-base-core-dbg           &lt;<span class="ot">NA</span>&gt;<span class="st"> </span>universe/math
+<span class="dv">3</span>     r-base-core <span class="fl">3.1.2</span>-1utopic0 universe/math
+<span class="dv">4</span>     r-base-core           &lt;<span class="ot">NA</span>&gt;<span class="st"> </span>universe/math
+R&gt;<span class="st"> </span></code></pre>
+<p>With the (default) expression catching everything, we see a lot of packages:</p>
+<pre class="sourceCode r"><code class="sourceCode r">R&gt;<span class="st"> </span><span class="kw">dim</span>(<span class="kw">getPackages</span>())
+[<span class="dv">1</span>] <span class="dv">104431</span>      <span class="dv">3</span>
+R&gt;<span class="st"> </span></code></pre>
+<p>A bit more information is on the <a href="http://dirk.eddelbuettel.com/code/rcpp.apt.html">package page here</a> as well as as the <a href="https://github.com/eddelbuettel/rcppapt">GitHub repo</a>.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

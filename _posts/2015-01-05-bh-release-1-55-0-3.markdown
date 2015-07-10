@@ -1,0 +1,34 @@
+---
+title: "BH release 1.55.0-3"
+kind: article
+created_at: 2015-01-05 23:16:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p>Right on the heels of <a href="http://dirk.eddelbuettel.com/blog/2015/01/04#bh_1.55.0-2">yesterday's BH release 1.55.0-2</a> bringing <a href="http://www.boost.org/doc/libs/1_57_0/libs/fusion/doc/html/">Boost Fusion</a>, we now have release 1.55.0-3 bringing <a href="http://www.boost.org/doc/libs/1_57_0/libs/graph/doc/index.html">Boost Graph</a>. To recap, <a href="http://dirk.eddelbuettel.com/code/bh.html">BH</a> is our <a href="http://cran.r-project.org">CRAN</a> package providing (a large part of the) <a href="http://www.boost.org">Boost</a> C++ libraries as a set of template headers for use by <a href="http://www.r-project.org">R</a> and of course <a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a>.</p>
+<p>And as a small project I am working on--and which should now be so much closer to release--needed not only <a href="http://www.boost.org/doc/libs/1_57_0/libs/fusion/doc/html/">Boost Fusion</a> but also <a href="http://www.boost.org/doc/libs/1_57_0/libs/graph/doc/index.html">Boost Graph</a>, I had to bother the CRAN maintainers twice in two days. This new version closes <a href="https://github.com/eddelbuettel/bh/issues/9">issue ticket 9</a>, and may be of interest to other packages such as the venerable <a href="http://www.bioconductor.org/packages/release/bioc/html/RBGL.html">RBGL</a> formerly on CRAN and now <a href="http://www.bioconductor.org/packages/release/bioc/html/RBGL.html">a BioConductor package</a> which includes its own copy of this graph library (plus depends).</p>
+<p>A brief summary of changes from the <code>NEWS</code> file is below.</p>
+<blockquote>
+<h4>
+Changes in version 1.55.0-3 (2015-01-04)
+</h4>
+<ul>
+<li><p> 
+Added Boost Graph requested in GH ticket #9 by Dirk for RcppStreams
+</p>
+</li>
+</ul>
+</blockquote>
+
+<p>Courtesy of <a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, there is also a <code>diffstat</code> report for the <a href="http://dirk.eddelbuettel.com/cranberries/2015/01/05#BH_1.55.0-3">most recent release</a>.</p>
+<p>Comments and suggestions are welcome via the <a href="https://r-forge.r-project.org/R/?group_id=1469">mailing list</a> or the issue tracker at the <a href="https://github.com/eddelbuettel/bh/">GitHub</a>GitHub repo.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

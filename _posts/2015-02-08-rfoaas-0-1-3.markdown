@@ -1,0 +1,20 @@
+---
+title: "rfoaas 0.1.3"
+kind: article
+created_at: 2015-02-08 00:26:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p>A brand new version of rfoaas is now on <a href="http://cran.r-project.org">CRAN</a>. It shadows the 0.1.3 release of <a href="http://www.foaas.com">FOAAS</a> just how an earlier 0.1.2 had done (but there was something not quite right at the server backend which we coded around with an interim release 0.1.2.1; neither one of these was ever released to <a href="http://cran.r-project.org">CRAN</a>).</p>
+<p>The rfoaas package provides an interface for <a href="http://www.r-project.org">R</a> to the most excellent <a href="http://www.foaas.com">FOAAS</a> service--which provides a modern, scalable and RESTful web service for the frequent need to tell someone to f$#@ off. Release 0.1.3 of <a href="http://www.foaas.com">FOAAS</a> brings support for <em>filters</em> which the initial support going to the absolutely outstanding <a href="http://shoutcloud.io">shoutcloud.io</a> service. This can be enabled by adding <code>filter=&quot;shoutcloud&quot;</code> as an argument to any of the access functions. And thanks to <a href="http://shoutcloud.io">shoutcloud.io</a>, the result will be LOUD AND CLEAR.</p>
+<p>As usual, <a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a> provides a <a href="http://dirk.eddelbuettel.com/cranberries/2015/02/07#rfoaas_0.1.3">diff to the previous CRAN release</a>. Questions, comments etc should go to the <a href="https://github.com/eddelbuettel/rfoaas/issues">GitHub issue tracker</a>.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

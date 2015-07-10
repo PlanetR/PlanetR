@@ -1,0 +1,46 @@
+---
+title: "inline 0.3.14"
+kind: article
+created_at: 2015-04-13 12:02:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p>The <a href="http://cran.rstudio.com/package=inline">inline</a> package facilitates writing code <em>in-line</em> in simple string expressions or short files. The package is mature and in maintenance mode: <a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a> used it greatly for several years but then moved on to Rcpp Attributes so we have a much limited need for extensions to inline.</p>
+<p>But we now have a new inline version 0.3.14. It brings both a few minor code updates since the last release in 2013, but also new extensions to both support Fortran better (for several flavours including f95) and to make working with dynamic library files easier. These were contributed by long-time R author <a href="https://www.nioz.nl/staff-detail?id=784400">Karline Soetaert</a> who thereby became a package co-author. Also, the package moved to <a href="http://github.com">GitHub</a> sometime last year and now lives <a href="https://github.com/eddelbuettel/inline">in this repo</a>.</p>
+<p>See below for a detailed list of changes extracted from the <code>NEWS</code> file.</p>
+<blockquote>
+<h4>
+Changes in inline version 0.3.14 (2015-04-11)
+</h4>
+<ul>
+  <li><p> 
+Removed call to <code>Rcpp::RcppLdFlags()</code> which is no longer needed
+</p> </li>
+  <li><p> 
+With move of repository to GitHub, added a <code>.travis.yml</code> file and corresponding entry in <code>.Rbuildignore</code>
+</p> </li>
+  <li><p> 
+Replaced calls to <code>require()</code> with calls to <code>requireNamespace()</code>; also updated one call
+</p> </li>
+  <li><p> 
+Much improved support for Fortran and Fortran95 thanks to Karline Soetaert who became a package co-author
+</p> </li>
+  <li><p> 
+New helper functions <code>writeDynLib</code> and <code>readDynLib</code> as well as new methods <code>print</code> and <code>code</code> (also by Karline)
+</p> </li>
+</ul>
+
+</blockquote>
+
+
+<p>Courtesy of <a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, there is a comparison to <a href="http://dirk.eddelbuettel.com/cranberries/2015/04/13#inline_0.3.14">the previous release</a>.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

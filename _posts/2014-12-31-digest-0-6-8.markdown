@@ -1,0 +1,21 @@
+---
+title: "digest 0.6.8"
+kind: article
+created_at: 2014-12-31 12:12:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p>Release 0.6.8 of <a href="http://dirk.eddelbuettel.com/code/digest.html">digest</a> package is now on <a href="http://cran.r-project.org">CRAN</a> and will get to <a href="http://www.debian.org">Debian</a> shortly.</p>
+<p>This release opens the door to also providing the <a href="http://dirk.eddelbuettel.com/code/digest.html">digest</a> functionality <em>at the C level</em> to other R packages. <a href="https://github.com/wush978">Wush Wu</a> is going to use the <a href="http://en.wikipedia.org/wiki/MurmurHash">murmurHash</a> C implementation in his recently-created <a href="http://cran.r-project.org/package=FeatureHashing">FeatureHashing</a> package.</p>
+<p>We plan to export the other hashing function as well. Another small change attempts to overcome a build limitation on that other largely-irrelevant-but-still-check-by-CRAN OS.</p>
+<p><a href="http://dirk.eddelbuettel.com/cranberries/index.html">CRANberries</a> provides the usual summary of changes to the <a href="http://dirk.eddelbuettel.com/cranberries/2014/12/31#digest_0.6.8">previous version</a>.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

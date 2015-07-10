@@ -1,0 +1,20 @@
+---
+title: "random 0.2.3"
+kind: article
+created_at: 2015-01-09 02:50:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p>A new release of my <a href="http://dirk.eddelbuettel.com/code/random.html">random</a> package for truly (hardware-based) random numbers as provided by <a href="http://www.random.org">random.org</a> is now on <a href="http://cran.r-project.org/">CRAN</a>.</p>
+<p>The main change is a switch to the <code>curl()</code> function from the eponymous package by <a href="http://jeroenooms.github.io/">Jeroen Ooms</a>. This was caused by <a href="http://www.random.org">random.org</a> now using https instead of http, annd the fact that te <code>url()</code> function from R does not cope well with the redirect. Besides this (enforced) change, everything else remains the same.</p>
+<p>Courtesy of <a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a> comes a diffstat report for <a href="http://dirk.eddelbuettel.com/cranberries/2015/01/08#random_0.2.3">this release</a>. Current and previous releases are <a href="http://dirk.eddelbuettel.com/code/random">available here</a> as well as on <a href="http://cran.r-project.org/">CRAN</a>.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+</p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

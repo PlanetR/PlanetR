@@ -1,0 +1,78 @@
+---
+title: "RcppArmadillo 0.5.000.0"
+kind: article
+created_at: 2015-04-22 11:46:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p>A new major version 5.000 of <a href="http://arma.sourceforge.net/">Armadillo</a> was released by <a href="http://conradsanderson.id.au/">Conrad</a> a couple of days ago. Armadillo is a powerful and expressive C++ template library for linear algebra aiming towards a good balance between speed and ease of use with a syntax deliberately close to a Matlab.</p>
+<p>This version brings several new functions for sparse matrices, and automagically switches to 64-bit matrix indices in C++11 mode. See below for a short description of all the major changes based on the <code>NEWS.Rd</code> file.</p>
+<p>This version is now on <a href="http://cran.r-project.org">CRAN</a>, as well as in <a href="http://www.debian.org">Debian</a>. The integration into <a href="http://cran.r-project.org">CRAN</a> was delayed by a few days as my testing had a shortcoming. We run full reverse-dependency checks against all 115 CRAN package depending in RcppArmadillo, and we even made full pre-release 0.4.999.1 and 0.5.000.0 shipped to the <a href="http://dirk.eddelbuettel.com/code/drat.html">drat</a> repo of the <a href="https://github.com/RcppCore">RcppCore</a> GitHub organization (which was described in the <a href="http://dirk.eddelbuettel.com/blog/2015/02/26#rcpparmadillo_0.4.650.1.1">previous release post</a>). But a minor flaw in my setup made it miss how the change in indexing affected packages <a href="http://cran.rstudio.com/package=dfcomb">dfcomb</a> and <a href="http://cran.rstudio.com/package=dfmta">dfmta</a>. My thanks to its maintainer Marie-Karelle Riviere for providing updates to her packages permitting this release to get onto <a href="http://cran.r-project.org">CRAN</a>. The testing process has been tightened and this should not happen again.</p>
+<blockquote>
+<h4>
+Changes in RcppArmadillo version 0.5.000.0 (2015-04-12)
+</h4>
+<ul>
+  <li><p> 
+Upgraded to Armadillo release Version 5.000 (&quot;Ankle Biter&quot;)
+</p>
+  <ul>
+    <li><p> 
+added <code>spsolve()</code> for solving sparse systems of linear equations
+</p> </li>
+    <li><p> 
+added <code>svds()</code> for singular value decomposition of sparse matrices
+</p> </li>
+    <li><p> 
+added <code>nonzeros()</code> for extracting non-zero values from matrices
+</p> </li>
+    <li><p> 
+added handling of diagonal views by sparse matrices
+</p> </li>
+    <li><p> 
+expanded <code>repmat()</code> to handle sparse matrices
+</p> </li>
+    <li><p> 
+expanded <code>join_rows()</code> and <code>join_cols()</code> to handle sparse matrices
+</p> </li>
+    <li><p> 
+<code>sort_index()</code> and <code>stable_sort_index()</code> have been placed in the delayed operations framework for increased efficiency
+</p> </li>
+    <li><p> 
+use of 64 bit integers is automatically enabled when using a C++11 compiler
+</p> </li>
+    <li><p> 
+workaround for a bug in recent releases of Apple Xcode
+</p> </li>
+    <li><p> 
+workaround for a bug in LAPACK 3.5
+</p> </li>
+  </ul>
+  </li>
+</ul>
+
+<h4>
+Changes in RcppArmadillo version 0.4.999.1.0 (2015-04-04)
+</h4>
+<ul>
+  <li><p> 
+Upgraded to Armadillo release preview 4.999.1
+</p> </li>
+  <li><p> 
+Non-CRAN test release
+</p> </li>
+</ul>
+</blockquote>
+
+
+<p>Courtesy of <a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, there is also a diffstat report for the <a href="http://dirk.eddelbuettel.com/cranberries/2015/04/21#RcppArmadillo_0.5.000.0">most recent CRAN release</a>. As always, more detailed information is on the <a href="http://dirk.eddelbuettel.com/code/rcpp.armadillo.html">RcppArmadillo page</a>. Questions, comments etc should go to the <a href="https://lists.r-forge.r-project.org/cgi-bin/mailman/listinfo/rcpp-devel">rcpp-devel mailing list</a> off the <a href="http://r-forge.r-project.org/projects/rcpp/">R-Forge</a> page.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

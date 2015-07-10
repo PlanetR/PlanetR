@@ -1,0 +1,25 @@
+---
+title: "RcppAnnoy 0.0.6"
+kind: article
+created_at: 2015-05-05 02:33:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p><img alt="annoy logo"
+     style="float:left;margin:10px 40px 10px 0;" width="300"
+     src="https://camo.githubusercontent.com/d6bf20e534ab76b67c731b566859a24149a4bf80/68747470733a2f2f7261772e6769746875622e636f6d2f73706f746966792f616e6e6f792f6d61737465722f616e6e2e706e67"></p>
+<p>A few days ago, <a href="http://erikbern.com">Erik</a> released a new version of his <a href="https://github.com/spotify/annoy">Annoy</a> library -- a small, fast, and lightweight C++ template header library for approximate nearest neighbours -- which now no longer requires <a href="http://www.boost.org">Boost</a>. While I don't mind <a href="http://www.boost.org">Boost</a> (actually, <a href="http://dirk.eddelbuettel.com/code/bh.html">quite the opposite</a>), it appears to have been a blocker in getting the Python part of <a href="https://github.com/spotify/annoy">Annoy</a> over to the world of <code>python3</code>.</p>
+<p>And with a new <a href="https://github.com/spotify/annoy">Annoy</a> out, I updated <a href="http://dirk.eddelbuettel.com/code/rcpp.annoy.html">RcppAnnoy</a> to it. In the process I got another pull request into <a href="https://github.com/spotify/annoy">Annoy</a> (use R's RNG rather than <code>rand()</code> which <code>R CMD check</code> really dislikes).</p>
+<p>This new package is now on <a href="http://cran.r-project.org">CRAN</a>.</p>
+<p>Courtesy of <a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, there is also a diffstat report for <a href="http://dirk.eddelbuettel.com/cranberries/2015/05/03#RcppAnnoy_0.0.6">this release</a>.</p>
+<p>More detailed information is on the <a href="http://dirk.eddelbuettel.com/code/rcpp.annoy.html">RcppAnnoy page</a> page.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

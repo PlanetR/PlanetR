@@ -1,0 +1,36 @@
+---
+title: "BH release 1.58.0-1"
+kind: article
+created_at: 2015-05-21 22:50:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p>A new released of <a href="http://dirk.eddelbuettel.com/code/bh.html">BH</a> is now on <a href="http://cran.r-project.org">CRAN</a>. <a href="http://dirk.eddelbuettel.com/code/bh.html">BH</a> provides a large part of the <a href="http://www.boost.org">Boost</a> C++ libraries as a set of template headers for use by <a href="http://www.r-project.org">R</a> and <a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a>.</p>
+<p>This release both upgrades the version of <a href="http://www.boost.org">Boost</a> to the current release, and adds a new library: <a href="http://www.boost.org/doc/libs/1_58_0/libs/multiprecision/doc/html/index.html">Boost MultiPrecision</a> .</p>
+<p>A brief summary of changes from the <code>NEWS</code> file is below.</p>
+<blockquote>
+<h4>
+Changes in version 1.58.0-1 (2015-05-21)
+</h4>
+<ul>
+  <li><p> 
+Upgraded to Boost 1.58 installed directly from upstream source
+</p> </li>
+  <li><p> 
+Added Boost MultiPrecision as requested in GH ticket #12 based on rcpp-devel request by Jordi Molins Coronado
+</p> </li>
+</ul>
+</blockquote>
+
+<p>Courtesy of <a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, there is also a <code>diffstat</code> report for the <a href="http://dirk.eddelbuettel.com/cranberries/2015/05/21#BH_1.58.0-1">most recent release</a>.</p>
+<p>Comments and suggestions are welcome via the <a href="https://r-forge.r-project.org/R/?group_id=1469">mailing list</a> or the issue tracker at the <a href="https://github.com/eddelbuettel/bh/">GitHub</a>GitHub repo.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

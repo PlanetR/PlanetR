@@ -1,0 +1,109 @@
+---
+title: "Rcpp 0.11.4"
+kind: article
+created_at: 2015-01-24 15:44:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p>A new release 0.11.4 of <a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a> is now on the <a href="http://cran.r-project.org">CRAN</a> network for <a href="http://www.r-project.org">GNU R</a>, and an updated <a href="http://www.debian.org">Debian</a> package will be uploaded in due course.</p>
+<p><a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a> has become <em>the</em> most popular way of enhancing <a href="http://www.r-project.org">GNU R</a> with C++ code. As of today, 323 packages on <a href="http://cran.r-project.org">CRAN</a> depend on <a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a> for making analyses go faster and further; <a href="http://www.bioconductor.org">BioConductor</a> adds another 41 packages, and casual searches on <a href="https://github.com">GitHub</a> suggests dozens mores.</p>
+<p>This release once again adds a large number of small bug fixes, polishes and enhancements. And like the last time, these changes were made by a group of seven different contributors (counting code commits) plus three more providing concrete suggestions. This shows that the <a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a> development and maintenance rests a large number of (broad) shoulders.</p>
+<p>See below for a detailed list of changes extracted from the <code>NEWS</code> file.</p>
+<blockquote>
+<h4>
+Changes in Rcpp version 0.11.4 (2015-01-20)
+</h4>
+<ul>
+  <li><p> 
+Changes in Rcpp API:
+</p>
+  <ul>
+    <li><p> 
+The <code>ListOf&lt;T&gt;</code> class gains the <code>.attr</code> and <code>.names</code> methods common to other Rcpp vectors.
+</p> </li>
+    <li><p> 
+The <code>[dpq]nbinom_mu()</code> scalar functions are now available via the <code>R::</code> namespace when R 3.1.2 or newer is used.
+</p> </li>
+    <li><p> 
+Add an additional test for AIX before attempting to include <code>execinfo.h</code>.
+</p> </li>
+    <li> <p>
+<code>Rcpp::stop</code> now supports improved <code>printf</code>-like syntax using the small tinyformat header-only library (following a similar implementation in Rcpp11)
+</p> </li>
+    <li><p> 
+Pairlist objects are now protected via an additional <code>Shield&lt;&gt;</code> as suggested by Martin Morgan on the rcpp-devel list.
+</p> </li>
+    <li><p> 
+Sorting is now prohibited at compile time for objects of type <code>List</code>, <code>RawVector</code> and <code>ExpressionVector</code>.
+</p> </li>
+    <li><p> 
+Vectors now have a <code>Vector::const_iterator</code> that is 'const correct' thanks to fix by Romain following a bug report in rcpp-devel by Martyn Plummer.
+</p> </li>
+    <li><p> 
+The <code>mean()</code> sugar function now uses a more robust two-pass method, and new unit tests for <code>mean()</code> were added at the same time.
+</p> </li>
+    <li><p> 
+The <code>mean()</code> and <code>var()</code> functions now support all core vector types.
+</p> </li>
+    <li><p> 
+The <code>setequal()</code> sugar function has been corrected via suggestion by Qiang Kou following a bug report by Søren Højsgaard.
+</p> </li>
+    <li><p> 
+The macros <code>major</code>, <code>minor</code>, and <code>makedev</code> no longer leak in from the (Linux) system header <code>sys/sysmacros.h</code>.
+</p> </li>
+    <li><p> 
+The <code>push_front()</code> string function was corrected.
+</p> </li>
+  </ul>
+  </li>
+  <li><p> 
+Changes in Rcpp Attributes:
+</p>
+  <ul>
+    <li><p> 
+Only look for plugins in the package's namespace (rather than entire search path).
+</p> </li>
+    <li><p> 
+Also scan header files for definitions of functions to be considerd by Attributes.
+</p> </li>
+    <li><p> 
+Correct the regular expression for source files which are scanned.
+</p> </li>
+  </ul>
+  </li>
+  <li><p> 
+Changes in Rcpp unit tests
+</p>
+  <ul>
+    <li><p> 
+Added a new binary test which will load a pre-built package to ensure that the Application Binary Interface (ABI) did not change; this test will (mostly or) only run at Travis where we have reasonable control over the platform running the test and can provide a binary.
+</p> </li> 
+    <li><p> 
+New unit tests for sugar functions <code>mean</code>, <code>setequal</code> and <code>var</code> were added as noted above.
+</p> </li>
+  </ul>
+  </li>
+  <li><p> 
+Changes in Rcpp Examples:
+</p>
+  <ul>
+    <li><p> 
+For the (old) examples <code>ConvolveBenchmarks</code> and <code>OpenMP</code>, the respective <code>Makefile</code> was renamed to <code>GNUmakefile</code> to please <code>R CMD check</code> as well as the CRAN Maintainers.
+</p></li>
+  </ul>
+  </li>
+</ul>
+</blockquote>
+
+
+<p>Thanks to <a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, you can also look at a <a href="http://dirk.eddelbuettel.com/cranberries/2015/01/24#Rcpp_0.11.4">diff to the previous release</a> As always, even fuller details are on the <a href="http://dirk.eddelbuettel.com/code/rcpp.changelog.html">Rcpp Changelog page</a> and the <a href="http://dirk.eddelbuettel.com/code/rcpp.html">Rcpp page</a> which also leads to the downloads page, the <a href="http://dirk.eddelbuettel.com/code/rcpp/html/index.html">browseable doxygen docs</a> and zip files of doxygen output for the standard formats. A <a href="http://dirk.eddelbuettel.com/code/rcpp/">local directory</a> has source and documentation too. Questions, comments etc should go to the <a href="https://lists.r-forge.r-project.org/cgi-bin/mailman/listinfo/rcpp-devel">rcpp-devel mailing list</a> off the <a href="http://r-forge.r-project.org/projects/rcpp/">R-Forge page</a>.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

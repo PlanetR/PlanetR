@@ -1,0 +1,42 @@
+---
+title: "RcppGSL 0.2.3"
+kind: article
+created_at: 2015-01-13 02:33:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p>A new version of <a href="http://dirk.eddelbuettel.com/code/rcpp.gsl.html">RcppGSL</a> is now on <a href="http://cran.r-project.org">CRAN</a> today. This package provides an interface from <a href="htpp://www.r-project.org">R</a> to the <a href="http://www.gnu.org/software/gsl/">GNU GSL</a> using our <a href="ttp://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a>.</p>
+<p>Similar to the <a href="http://dirk.eddelbuettel.com/blog/2015/01/10#rcppclassic_0.9.6">recent RcppClassic release</a>, this update was triggered by the CRAN maintainers desire to keep the <code>Makefile</code> free of GNU make extensions. At the same time we simplified the <code>configure</code> file a little, and refreshed the look and feel of the vignette.</p>
+<p>No user-facing changes were made.</p>
+<p>The NEWS file entries follows below:</p>
+<blockquote>
+<h4>
+Changes in version 0.2.3 (2015-01-10)
+</h4>
+<ul>
+<li><p> 
+The <code>src/Makevars.in</code> was pruned of GNU make features at the request of the CRAN Maintainers
+</p> </li>
+<li><p>
+<code>configure.ac</code> and <code>configure</code> were updated, and shortened
+</p> </li>
+<li><p> 
+The <code>RcppGSL-intro.Rnw</code> vignette was updated for its look and feel.
+</p> </li>
+</ul>
+
+</blockquote>
+
+
+<p>Courtesy of <a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, a summary of changes to <a href="http://dirk.eddelbuettel.com/cranberries/2015/01/12#RcppGSL_0.2.3">the most recent release</a> is available.</p>
+<p>More information is on the <a href="http://dirk.eddelbuettel.com/code/rcpp.gsl.html">RcppGSL page</a>. Questions, comments etc should go to the <a href="https://lists.r-forge.r-project.org/cgi-bin/mailman/listinfo/rcpp-devel">rcpp-devel mailing list</a> off the <a href="http://r-forge.r-project.org/projects/rcpp/">R-Forge page</a>.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

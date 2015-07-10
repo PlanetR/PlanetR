@@ -1,0 +1,44 @@
+---
+title: "RcppGSL 0.2.4"
+kind: article
+created_at: 2015-01-24 15:20:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p>A new version of <a href="http://dirk.eddelbuettel.com/code/rcpp.gsl.html">RcppGSL</a> is now on <a href="http://cran.r-project.org">CRAN</a>. This package provides an interface from <a href="htpp://www.r-project.org">R</a> to the <a href="http://www.gnu.org/software/gsl/">GNU GSL</a> using our <a href="ttp://dirk.eddelbuettel.com/code/rcpp.html">Rcpp</a> package.</p>
+<p>This follows on the heels on the <a href="http://dirk.eddelbuettel.com/blog/2015/01/12#rcppgsl_0.2.3">recent RcppGSL 0.2.3 release</a> and extends the excellent point made by <a href="https://github.com/thirdwing">Qiang Kou</a> in a contributed section of the vignette: We now not only allow to turn the GSL error handler off (to not <code>abort()</code> on error) but do so on package initialisation.</p>
+<p>No other user-facing changes were made.</p>
+<p>The NEWS file entries follows below:</p>
+<blockquote>
+<h4>
+Changes in version 0.2.4 (2015-01-24)
+</h4>
+
+<ul>
+  <li>
+    <p> 
+Two new helper function to turn the default GSL error handler off (and to restore it) were added. The default handler is now turned off when the package is attached so that GSL will no longer abort an R session on error. Users will have to check the error code.
+</p>
+  </li> 
+  <li><p> 
+The <code>RcppGSL-intro.Rnw</code> vignette was expanded with a short section on the GSL error handler (thanks to Qiang Kou).
+</p> </li>
+</ul>
+
+</ul>
+
+</blockquote>
+
+
+<p>Courtesy of <a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, a summary of changes to <a href="http://dirk.eddelbuettel.com/cranberries/2015/01/24#RcppGSL_0.2.4">the most recent release</a> is available.</p>
+<p>More information is on the <a href="http://dirk.eddelbuettel.com/code/rcpp.gsl.html">RcppGSL page</a>. Questions, comments etc should go to the <a href="https://lists.r-forge.r-project.org/cgi-bin/mailman/listinfo/rcpp-devel">rcpp-devel mailing list</a> off the <a href="http://r-forge.r-project.org/projects/rcpp/">R-Forge page</a>.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>

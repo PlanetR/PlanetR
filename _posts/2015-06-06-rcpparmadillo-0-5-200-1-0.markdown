@@ -1,0 +1,46 @@
+---
+title: "RcppArmadillo 0.5.200.1.0"
+kind: article
+created_at: 2015-06-06 00:18:00 UTC
+author: Dirk Eddelbuettel
+categories: 
+tags: 
+layout: post
+---
+<p><a href="http://conradsanderson.id.au/">Conrad</a> put out a new minor release 5.200.1 of <a href="http://arma.sourceforge.net/">Armadillo</a> yesterday. Armadillo is a powerful and expressive C++ template library for linear algebra aiming towards a good balance between speed and ease of use with a syntax deliberately close to a Matlab.</p>
+<p>Our corresponding <a href="http://dirk.eddelbuettel.com/code/rcpp.armadillo.html">RcppArmadillo</a> release 0.5.200.1.0 is now on <a href="http://cran.r-project.org">CRAN</a> and on its way into <a href="http://www.debian.org">Debian</a>. See below for the brief list of changes.</p>
+<blockquote>
+<h4>
+Changes in RcppArmadillo version 0.5.200.1.0 (2015-06-04)
+</h4>
+<ul>
+<li><p> 
+Upgraded to Armadillo release 5.200.1 (&quot;Boston Tea Smuggler&quot;)
+</p>
+<ul>
+<li><p> 
+added <code>orth()</code> for finding the orthonormal basis of the range space of a matrix
+</p> </li>
+<li><p> 
+expanded element initialisation to handle nested initialiser lists (C++11)
+</p> </li>
+<li><p> 
+workarounds for bugs in GCC, Intel and MSVC C++ compilers
+</p> </li>
+</ul>
+</li>
+<li><p> 
+Added another example to <code>inst/examples/fastLm.r</code>
+</p> </li>
+</ul>
+</blockquote>
+
+<p>Courtesy of <a href="http://dirk.eddelbuettel.com/cranberries/">CRANberries</a>, there is also a diffstat report for the <a href="http://dirk.eddelbuettel.com/cranberries/2015/06/05#RcppArmadillo_0.5.200.1.0">most recent CRAN release</a>. As always, more detailed information is on the <a href="http://dirk.eddelbuettel.com/code/rcpp.armadillo.html">RcppArmadillo page</a>. Questions, comments etc should go to the <a href="https://lists.r-forge.r-project.org/cgi-bin/mailman/listinfo/rcpp-devel">rcpp-devel mailing list</a> off the <a href="http://r-forge.r-project.org/projects/rcpp/">R-Forge</a> page.</p>
+<p style="font-size:80%; font-style:italic;">
+This post by <a href="http://dirk.eddelbuettel.com">Dirk Eddelbuettel</a> originated on his <a href="http://dirk.eddelbuettel.com/blog/">Thinking inside the box</a> blog. Please report excessive re-aggregation in third-party for-profit settings.
+<p><div class="author">
+  <img src="" style="width: 96px; height: 96;">
+  <span style="position: absolute; padding: 32px 15px;">
+    <i>Original post by <a href="http://twitter.com/">Dirk Eddelbuettel</a> - check out <a href="http://dirk.eddelbuettel.com/blog">Thinking inside the box   </a></i>
+  </span>
+</div>
