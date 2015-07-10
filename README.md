@@ -1,3 +1,14 @@
+# Planet R project
+
+**Planet R** is a blog aggregator run from Github Pages.
+
+This README.md probably needs a lot more content - this is a fork of jekyll-now with the planet plugin added, and a bunch of skeletal things done to make it easy to regenerate the site.
+
+
+
+# OLD README FOLLOWS - CLEAN UP
+
+
 # Jekyll Now
 
 **Jekyll** is a static site generator that's perfect for GitHub hosted blogs ([Jekyll Repository](https://github.com/jekyll/jekyll))
