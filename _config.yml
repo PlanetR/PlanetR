@@ -73,3 +73,6 @@ exclude:
     - Gemfile.lock
     - LICENSE
     - vendor
+
+exclude: [vendor]
+
